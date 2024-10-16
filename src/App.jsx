@@ -1,10 +1,10 @@
 import { link } from 'framer-motion/client'
 import './App.css'
 import Hero from './components/Hero'
+import Grid from './components/Grid'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { FloatingNav } from './components/ui/FloatingNav'
 import { FaHome } from 'react-icons/fa'
-import Grid from './components/Grid'
 
 function App() {
 
