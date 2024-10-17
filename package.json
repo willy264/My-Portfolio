@@ -13,9 +13,8 @@
     "@react-three/drei": "^9.114.4",
     "@react-three/fiber": "^8.17.10",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.8",
+    "framer-motion": "^11.11.9",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "^14.2.15",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-icons": "^5.3.0",
@@ -37,8 +36,9 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc-fb9a90fa48-20240614",
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.11.0",
+    "next": "^14.2.15",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "^3.4.14",
     "vite": "^5.4.9"
   }
 }

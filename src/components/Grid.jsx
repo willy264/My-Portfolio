@@ -50,7 +50,7 @@ const Grid = () => {
   
     {
       id: 5,
-      title: "Currently building a JS Animation library",
+      title: "Currently building a ReactJs E-Commerce web-site",
       description: "The Inside Scoop",
       // className: "md:col-span-3 md:row-span-2",
       className: "col-span-1 md:row-span-2 md:col-span-3 lg:col-span-4",
