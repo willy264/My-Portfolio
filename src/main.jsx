@@ -29,7 +29,6 @@ createRoot(document.getElementById('root')).render(
       enableSystem
       disableTransitionOnChange
     >
-      {/* {children} */}
       <App />
     </ThemeProvider>
   </StrictMode>,
