@@ -1,11 +1,11 @@
 import './App.css'
+import { navItems } from '../data'
+import { FloatingNav } from './components/ui/FloatingNav'
 import Hero from './components/Hero'
 import Grid from './components/Grid'
 import RecentProjects from './components/RecentProjects'
 import Clients from './components/Clients'
-import { FloatingNav } from './components/ui/FloatingNav'
-import { FaHome } from 'react-icons/fa'
-import { navItems } from '../data'
+import Experience from './components/Experience'
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
         <Grid />
         <RecentProjects />
         <Clients />
+        <Experience />
       </div>
     </main>
   )
