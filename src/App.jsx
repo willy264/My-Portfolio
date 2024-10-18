@@ -2,6 +2,7 @@ import './App.css'
 import Hero from './components/Hero'
 import Grid from './components/Grid'
 import RecentProjects from './components/RecentProjects'
+import Clients from './components/Clients'
 import { FloatingNav } from './components/ui/FloatingNav'
 import { FaHome } from 'react-icons/fa'
 import { navItems } from '../data'
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <Grid />
         <RecentProjects />
+        <Clients />
       </div>
     </main>
   )
