@@ -16,7 +16,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(className,
-        "grid grid-cols-3 md:auto-rows-[18rem] md:grid-cols-6 gap-10 mx-auto"
+        "grid grid-cols-1 md:auto-rows-[18rem] md:grid-cols-6 gap-10 mx-auto"
       )}>
       {children}
     </div>
@@ -53,9 +53,9 @@ export const BentoGridItem = ({
       }}  
     >
 
-{/* STYLING THE IMAGE IN id===6 */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
+          {/* image for the 1st 4 5 box */}
           {img && (
               <img
                 src={img}
@@ -65,13 +65,13 @@ export const BentoGridItem = ({
             )}
         </div>
 
-{/* STYLING THE IMAGE IN id===5 */}
         <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"} `}>
+          {/* for spareImg in 4 and 5 */}
           {spareImg && (
             <img
               src={spareImg}
               alt={spareImg}
-                width={220}
+              width={220}
               className="object-cover object-center w-full h-full"
             />
           )}
