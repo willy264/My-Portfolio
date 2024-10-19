@@ -5,8 +5,9 @@ const Footer = () => {
   return (
     <footer className='w-full mb-[100px] md:mb-5 pb-10 h-fit overflow-hidden' id='contact'>
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img src="/footer-grid.svg" alt="grid" className='opacity-5footer0' />
+        <img src="/footer-grid.svg" alt="grid" className='opacity-85 w-full h-full' />
       </div>
+
       <div className="flex flex-col items-center">
         <h1 className='heading lg:max-w-[45vw]'>
           Ready to take <span className='text-purple'>your</span> digital presence to the next level?

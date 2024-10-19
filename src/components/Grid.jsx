@@ -8,7 +8,6 @@ const Grid = () => {
       id: 1,
       title: "I prioritize client collaboration, fostering open communication ",
       description: "",
-      // className: "lg:col-span-2 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       className: "md:row-span-2 col-span-1 md:col-span-6 lg:col-span-3",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end",
@@ -19,7 +18,6 @@ const Grid = () => {
       id: 2,
       title: "I'm very flexible with time zone communications",
       description: "",
-      // className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       className: "col-span-1 md:col-span-3",
       imgClassName: "",
       titleClassName: "justify-start",
@@ -30,7 +28,6 @@ const Grid = () => {
       id: 3,
       title: "My tech stack",
       description: "I constantly try to improve",
-      // className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       className: "col-span-1 md:col-span-3",
       imgClassName: "",
       titleClassName: "justify-center",
@@ -52,10 +49,9 @@ const Grid = () => {
       id: 5,
       title: "Currently building a ReactJs E-Commerce web-site",
       description: "The Inside Scoop",
-      // className: "md:col-span-3 md:row-span-2",
-      className: "md:row-span-2 col-span-1 md:col-span-4 lg:col-span-3",
+      className: "md:row-span-2 col-span-1 md:col-span-6 lg:col-span-3",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-      titleClassName: "justify-center md:justify-start lg:justify-center",
+      titleClassName: "justify-center md:justify-start md:mt-40 lg:justify-center lg:mt-0",
       img: "/b5.svg",
       spareImg: "/grid.svg",
     },
@@ -63,7 +59,7 @@ const Grid = () => {
       id: 6,
       title: "Do you want to start a project together?",
       description: "",
-      className: "lg:col-span-3 md:col-span-3 md:row-span-1",
+      className: "lg:col-span-3 md:col-span-3 md:row-span-1 md:row-start-4 md:col-start-4",
       imgClassName: "",
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",
@@ -73,6 +69,7 @@ const Grid = () => {
 
   return (
     <section id='about'>
+      {/* <BackgroundLines className='absolute left-0' /> */}
       <BentoGrid>
         {gridItems.map(({id, title, description, className, img, imgClassName, titleClassName, spareImg}, i) => 
           <BentoGridItem 

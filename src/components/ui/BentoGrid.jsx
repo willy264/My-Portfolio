@@ -38,8 +38,8 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("daviswill264@gmail.com")
     setCopied(true)
+    navigator.clipboard.writeText("daviswill264@gmail.com")
   }
 
   return (
@@ -49,13 +49,13 @@ export const BentoGridItem = ({
       )}
       style={{
         backgroundColor: "rgb(4, 7, 29)",
-        background:"linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+        background:"linear-gradient(90deg, #10041d9d 0%, #100716a1 100%)",
       }}  
     >
-
+{/* IMAGES */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
-          {/* image for the 1st 4 5 box */}
+          {/* image for the 1 4 5 box */}
           {img && (
               <img
                 src={img}
@@ -64,7 +64,7 @@ export const BentoGridItem = ({
               />
             )}
         </div>
-
+{/* IMAGES */}
         <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"} `}>
           {/* for spareImg in 4 and 5 */}
           {spareImg && (
@@ -77,12 +77,12 @@ export const BentoGridItem = ({
           )}
         </div>
 
-{/* PUTTING THE GRADIENT */}
+{/* PUTTING THE GRADIENT OF 6 */}
         {id === 6 && (
           <BackgroundGradientAnimation />
         )}
 
-{/* title and description */}
+{/* styling individual box  */}
         <div
           className={cn(
             titleClassName,
@@ -138,7 +138,7 @@ export const BentoGridItem = ({
                 title={copied ? 'E-mail copied' : "Copy my E-mail"}
                 icon={<IoCopyOutline />}
                 position='left'
-                otherClasses='!bg-[#161a31'
+                otherClasses='!bg-[#000000]'
                 handleClick={handleCopy}
               />
             </div>
