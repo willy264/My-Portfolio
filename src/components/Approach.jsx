@@ -3,10 +3,12 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
+import { BackgroundLines } from './ui/BackgroundLines'
 
 function Approach() {
   return (
     <section className="w-full py-20 text-center">
+      {/* <BackgroundLines /> */}
       <h1 className="heading">
         My <span className="text-purple">Approach</span>
       </h1>

@@ -14,7 +14,7 @@ const Footer = () => {
         </h1>
         <p className="text-white-200 text-center md:mt-10 my-5">Reach out to me today and let&apos;s discuss how I can help you achieve your goals.</p>
         <a href="mailto:daviswill264@gmail.com">
-          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 py-6  text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-xl font-bold">
+          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 py-6  text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-xl font-bold z-20">
             Let's get in touch
             <FaLocationArrow />
           </button>
