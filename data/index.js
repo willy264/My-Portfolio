@@ -5,6 +5,101 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+// export const products = [
+//   {
+//     title: "Moonbeam",
+//     link: "https://gomoonbeam.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+//   },
+//   {
+//     title: "Cursor",
+//     link: "https://cursor.so",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+//   },
+//   {
+//     title: "Rogue",
+//     link: "https://userogue.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+//   },
+ 
+//   {
+//     title: "Editorially",
+//     link: "https://editorially.org",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+//   },
+//   {
+//     title: "Editrix AI",
+//     link: "https://editrix.ai",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+//   },
+//   {
+//     title: "Pixel Perfect",
+//     link: "https://app.pixelperfect.quest",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+//   },
+ 
+//   {
+//     title: "Algochurn",
+//     link: "https://algochurn.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+//   },
+//   {
+//     title: "Aceternity UI",
+//     link: "https://ui.aceternity.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+//   },
+//   {
+//     title: "Tailwind Master Kit",
+//     link: "https://tailwindmasterkit.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+//   },
+//   {
+//     title: "SmartBridge",
+//     link: "https://smartbridgetech.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+//   },
+//   {
+//     title: "Renderwork Studio",
+//     link: "https://renderwork.studio",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+//   },
+ 
+//   {
+//     title: "Creme Digital",
+//     link: "https://cremedigital.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+//   },
+//   {
+//     title: "Golden Bells Academy",
+//     link: "https://goldenbellsacademy.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+//   },
+//   {
+//     title: "Invoker Labs",
+//     link: "https://invoker.lol",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+//   },
+//   {
+//     title: "E Free Invoice",
+//     link: "https://efreeinvoice.com",
+//     thumbnail:
+//       "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+//   },
+// ];
 
 export const projects = [
   {
@@ -44,8 +139,19 @@ export const projects = [
 export const testimonials = [
   {
     quote:
+      "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
+    name: "Qudus Salami",
+    title: "Co-hacker in the Deca-Hack ",
+  },
+  {
+    quote:
       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
     name: "Michael Johnson",
+    title: "Director of AlphaStream Technologies",
+  },
+  {
+    quote:
+      "You did a great job on our website redesign. You quickly understood our needs, delivered a clean, responsive front-end, and kept communication clear throughout the project. We’re very happy with the result and would recommend your services",
     title: "Director of AlphaStream Technologies",
   },
   {
@@ -56,21 +162,9 @@ export const testimonials = [
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
+    name: "Qudus Salami",
+    title: "Co-hacker in the ICP Deca-hackathon",
   },
 ];
 
@@ -142,13 +236,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: 'https://github.com/willy264',
   },
   {
     id: 2,
     img: "/twit.svg",
+    link: 'https://x.com/william_da3447',
   },
   {
     id: 3,
     img: "/link.svg",
+    link: 'https://www.linkedin.com/in/williams-akinwamide-112784283/',
   },
 ];

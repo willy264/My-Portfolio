@@ -7,11 +7,11 @@ import { BackgroundLines } from './ui/BackgroundLines'
 
 function Approach() {
   return (
-    <section className="w-full py-20 text-center">
-      {/* <BackgroundLines /> */}
+    <section className="w-full py-20 text-center relative overflow-hidden">
       <h1 className="heading">
         My <span className="text-purple">Approach</span>
       </h1>
+      <BackgroundLines />
       <div
         className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 

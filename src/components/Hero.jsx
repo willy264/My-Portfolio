@@ -3,8 +3,8 @@ import { Spotlight } from "./ui/Spotlight"
 import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { FaLocationArrow } from "react-icons/fa6"
 import { BackgroundBeamsWithCollision } from "./ui/BackgroundBeamsWithCollision"
-import { BackgroundLines } from "./ui/BackgroundLines"
-import { BackgroundBeams } from "./ui/BackgroundBeams"
+import { SparklesCore } from "./ui/Sparkles"
+// import { HeroParallax } from "./ui/HeroParallax"
 
 const Hero = () => {
   return (
@@ -17,8 +17,10 @@ const Hero = () => {
 
       <BackgroundBeamsWithCollision className="h-screen w-full dark:bg-purple-100 bg-white flex items-center justify-center  absolute top-0 left-0">
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-purple-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-          <BackgroundBeams />
+          <SparklesCore />
       </BackgroundBeamsWithCollision>
+
+      {/* <HeroParallax products={products} /> */}
 
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
@@ -26,7 +28,9 @@ const Hero = () => {
             Dynamic Web Magic with react.js
           </h2>
           
-          <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Transforming Concepts into Seamless User Experiences' />
+          <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Designing the future, one pixel at a time.' />
+
+          {/* The Ultimate <br /> development studio */}
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi! I&apos;m U~Iriamuzu, a React.js Developer based in Nigeria.

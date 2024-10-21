@@ -69,7 +69,6 @@ const Grid = () => {
 
   return (
     <section id='about'>
-      {/* <BackgroundLines className='absolute left-0' /> */}
       <BentoGrid>
         {gridItems.map(({id, title, description, className, img, imgClassName, titleClassName, spareImg}, i) => 
           <BentoGridItem 

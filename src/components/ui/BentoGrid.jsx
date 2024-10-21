@@ -7,6 +7,7 @@ import { GlobeDemo } from './GridGlobe';
 import animationData from '../../../data/confetti.json'
 import Lottie from 'react-lottie';
 import MagicButton from './MagicButton'
+import { BackgroundBeams } from "../ui/BackgroundBeams"
 import { IoCopyOutline } from 'react-icons/io5';
 
 export const BentoGrid = ({
@@ -98,7 +99,8 @@ export const BentoGridItem = ({
           </div>
 
           {id === 2 && <GlobeDemo />}
-
+              
+          {id === 3 && <BackgroundBeams />}
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 top-0">
               <div className="flex flex-col gap-3 lg:gap-8">
