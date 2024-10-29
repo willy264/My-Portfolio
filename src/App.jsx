@@ -9,14 +9,14 @@ import Clients from './components/Clients'
 import Experience from './components/Experience'
 import Approach from './components/Approach'
 import Footer from './components/Footer'
-import Cursor from './components/Cursor'
+// import Cursor from './components/Cursor'
 
 function App() {
 
   return (
     <main className='relative bg-purple-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip'>
       <div className="max-w-7xl w-full">
-      <Cursor />
+      {/* <Cursor /> */}
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
