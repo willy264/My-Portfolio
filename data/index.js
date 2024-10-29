@@ -153,7 +153,7 @@ export const projects = [
     des: "Your One-Stop Online Shop, Explore a wide range of products. Enjoy convenient online shopping, secure payments using stripe.",
     img: "/project3.PNG",
     // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.comhttps://e-commerce-2kdi.vercel.app/",
+    link: "https://e-commerce-2kdi.vercel.app/",
     glink: "https://github.com/willy264/E-Commerce.git",
   },
 ];
