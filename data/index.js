@@ -1,9 +1,5 @@
-export const navItems = [
-  { name: "About", link: "#about", },
-  { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
-];
+
+// export
 
 // export const products = [
 //   {
@@ -164,17 +160,6 @@ export const testimonials = [
       "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
     name: "Qudus Salami",
     title: "Co-hacker in the Deca-Hack ",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "You did a great job on our website redesign. You quickly understood our needs, delivered a clean, responsive front-end, and kept communication clear throughout the project. We’re very happy with the result and would recommend your services",
-    title: "Director of AlphaStream Technologies",
   },
   {
     quote:

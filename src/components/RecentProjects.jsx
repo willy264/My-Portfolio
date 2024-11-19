@@ -1,7 +1,8 @@
 import React from 'react'
 import { projects } from '../../data'
-import { PinContainer } from './ui/3d-pin'
+// import { PinContainer } from './ui/3d-pin'
 import { FaLocationArrow } from 'react-icons/fa6'
+import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 
 
 const RecentProjects = () => {
@@ -14,7 +15,55 @@ const RecentProjects = () => {
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-[0px]">
         {projects.map(({ id, title, des, img, iconLists, link, glink }) => (
           <div key={id} className=' sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
-            <PinContainer title={link} href={link}>
+            <CardContainer className="inter-var">
+              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-neutral-600 dark:text-white"
+                >
+                  {title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                >
+                  {des}
+                </CardItem>
+                <CardItem translateZ="100" className="w-full mt-4">
+                  <img
+                    src={img}
+                    height="1000"
+                    as="img"
+                    href={link}
+                    width="1000"
+                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    alt="thumbnail"
+                  />
+                </CardItem>
+                <div className="flex justify-between items-center mt-20">
+                  <CardItem
+                    translateZ={20}
+                    as="a"
+                    href={link}
+                    target="__blank"
+                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                  >
+                    Try now → 
+                  </CardItem>
+                  <CardItem
+                    translateZ={20}
+                    as="a"
+                    href={glink}
+                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold flex gap-1 justify-center items-center"
+                  >
+                    <span>Github Link</span> 
+                    <FaLocationArrow /> 
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
+            {/* <PinContainer title={link} href={link}>
               <div className='relative flex items-center justify-center sm:w-[570px] sm:h-[40vh] h-[30vh] w-[80vw] overflow-hidden mb-10 rounded-2xl'>
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
                   <img src="/bg.png" alt="bg-img" />
@@ -40,7 +89,7 @@ const RecentProjects = () => {
                   <FaLocationArrow className='ms-3' color='#cbacf9' />
                 </div>
               </div>
-            </PinContainer>
+            </PinContainer> */}
           </div>
         ))}
       </div>
