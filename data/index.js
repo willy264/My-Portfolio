@@ -97,81 +97,85 @@
 //   },
 // ];
 
-export const projects = [
-  {
-    id: 1,
-    title: "Next generation digital banking",
-    des: "Taking your financial life online with Easybank",
-    img: "/project1.PNG",
-    // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://1-easybank-landing-page-master.vercel.app",
-    glink: "https://github.com/willy264/1.easybank-landing-page-master.git",
-  },
-  {
-    id: 2,
-    title: "QuizMe - Quiz App",
-    des: "A dynamic quiz application that tests your knowledge with engaging questions and instant feedback",
-    img: "/project5.PNG",
-    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://2-quiz-app.vercel.app",
-    glink: "https://github.com/willy264/2.quiz-app.git",
-  },
-  {
-    id: 3,
-    title: "Dynamic Multistep Form - Form Application",
-    des: "Collect accurate and complete data with our multi-step form.",
-    img: "/project6.PNG",
-    // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://3-multistep-form.vercel.app",
-    glink: "https://github.com/willy264/3.multistep-form.git",
-  },
-  {
-    id: 4,
-    title: "AI Chatbot with JavaScript",
-    des: "Experience the future of AI-powered conversations.",
-    img: "/project4.PNG",
-    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://4chat-gpt.vercel.app/",
-    glink: "https://github.com/willy264/4.chat-gpt.git",
-  },
-  {
-    id: 5,
-    title: "Meme Factory: Meme generator application with React",
-    des: "Customize memes with your own text, fonts and random images",
-    img: "/project2.PNG",
-    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://7-meme-generator-react.vercel.app/",
-    glink: "https://github.com/willy264/7.meme-generator-react.git",
-  },
-  {
-    id: 6,
-    title: "EcoFashionMart: An E-commerce website with React",
-    des: "Your One-Stop Online Shop, Explore a wide range of products. Enjoy convenient online shopping, secure payments using stripe.",
-    img: "/project3.PNG",
-    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://e-commerce-2kdi.vercel.app/",
-    glink: "https://github.com/willy264/E-Commerce.git",
-  },
-];
+// export const projects = [
+//   {
+//     id: 1,
+//     title: "Next generation digital banking",
+//     des: "Taking your financial life online with Easybank",
+//     img: "/project1.PNG",
+//     // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+//     link: "https://1-easybank-landing-page-master.vercel.app",
+//     glink: "https://github.com/willy264/1.easybank-landing-page-master.git",
+//     className: "bg-red lg:row-start-3 lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
+//   },
+//   {
+//     id: 2,
+//     title: "QuizMe - Quiz App",
+//     des: "A dynamic quiz application that tests your knowledge with engaging questions and instant feedback",
+//     img: "/project5.PNG",
+//     // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+//     link: "https://2-quiz-app.vercel.app",
+//     glink: "https://github.com/willy264/2.quiz-app.git",
+//   },
+//   {
+//     id: 3,
+//     title: "Dynamic Multistep Form - Form Application",
+//     des: "Collect accurate and complete data with our multi-step form.",
+//     img: "/project6.PNG",
+//     // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+//     link: "https://3-multistep-form.vercel.app",
+//     glink: "https://github.com/willy264/3.multistep-form.git",
+//   },
+//   {
+//     id: 4,
+//     title: "AI Chatbot with JavaScript",
+//     des: "Experience the future of AI-powered conversations.",
+//     img: "/project4.PNG",
+//     // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+//     link: "https://4chat-gpt.vercel.app/",
+//     glink: "https://github.com/willy264/4.chat-gpt.git",
+//   },
+//   {
+//     id: 5,
+//     title: "Meme Factory: Meme generator application with React",
+//     des: "Customize memes with your own text, fonts and random images",
+//     img: "/project2.PNG",
+//     // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+//     link: "https://7-meme-generator-react.vercel.app/",
+//     glink: "https://github.com/willy264/7.meme-generator-react.git",
+//   },
+//   {
+//     id: 6,
+//     title: "EcoFashionMart: An E-commerce website with React",
+//     des: "Your One-Stop Online Shop, Explore a wide range of products. Enjoy convenient online shopping, secure payments using stripe.",
+//     img: "/project3.PNG",
+//     // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+//     link: "https://e-commerce-2kdi.vercel.app/",
+//     glink: "https://github.com/willy264/E-Commerce.git",
+//   },
+// ];
 
 export const testimonials = [
   {
     quote:
       "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
-    name: "Qudus Salami",
-    title: "Co-hacker in the Deca-Hack ",
+    name: "Faraq Salami",
+    designation: "Co-hacker in the Deca-Hack ",
+    src: 'OIP (17).jpeg',
   },
   {
     quote:
       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
     name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+    designation: "Director of AlphaStream Technologies",
+    src: 'OIP (15).jpeg',
   },
   {
     quote:
       "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
     name: "Qudus Salami",
-    title: "Co-hacker in the ICP Deca-hackathon",
+    designation: "Co-hacker in the ICP Deca-hackathon",
+    src: 'OIP (16).jpeg',
   },
 ];
 

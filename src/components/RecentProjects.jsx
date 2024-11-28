@@ -1,9 +1,67 @@
 import React from 'react'
-import { projects } from '../../data'
+// import { projects } from '../../data'
 // import { PinContainer } from './ui/3d-pin'
 import { FaLocationArrow } from 'react-icons/fa6'
 import { CardBody, CardContainer, CardItem } from './ui/3d-card'
+import { cn } from "../lib/utils";
 
+const projects = [
+  {
+    id: 1,
+    title: "Next generation digital banking",
+    des: "Taking your financial life online with Easybank",
+    img: "/project1.PNG",
+    // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://1-easybank-landing-page-master.vercel.app",
+    glink: "https://github.com/willy264/1.easybank-landing-page-master.git",
+    className: "bg-red-500 text-purple lg:row-start-3 lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
+  },
+  {
+    id: 2,
+    title: "QuizMe - Quiz App",
+    des: "A dynamic quiz application that tests your knowledge with engaging questions and instant feedback",
+    img: "/project5.PNG",
+    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://2-quiz-app.vercel.app",
+    glink: "https://github.com/willy264/2.quiz-app.git",
+  },
+  {
+    id: 3,
+    title: "Dynamic Multistep Form - Form Application",
+    des: "Collect accurate and complete data with our multi-step form.",
+    img: "/project6.PNG",
+    // iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    link: "https://3-multistep-form.vercel.app",
+    glink: "https://github.com/willy264/3.multistep-form.git",
+  },
+  {
+    id: 4,
+    title: "AI Chatbot with JavaScript",
+    des: "Experience the future of AI-powered conversations.",
+    img: "/project4.PNG",
+    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://4chat-gpt.vercel.app/",
+    glink: "https://github.com/willy264/4.chat-gpt.git",
+  },
+  {
+    id: 5,
+    title: "Meme Factory: Meme generator application with React",
+    des: "Customize memes with your own text, fonts and random images",
+    img: "/project2.PNG",
+    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://7-meme-generator-react.vercel.app/",
+    glink: "https://github.com/willy264/7.meme-generator-react.git",
+  },
+  {
+    id: 6,
+    title: "EcoFashionMart: An E-commerce Website with React",
+    des: "Your one-stop online shop, explore a wide range of products. Enjoy convenient online shopping, secure payments using stripe.",
+    img: "/project3.PNG",
+    // iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://e-commerce-2kdi.vercel.app/",
+    glink: "https://github.com/willy264/E-Commerce.git",
+  },
+];
 
 const RecentProjects = () => {
   return (
@@ -13,13 +71,13 @@ const RecentProjects = () => {
         <span className='text-purple'>recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-[0px]">
-        {projects.map(({ id, title, des, img, iconLists, link, glink }) => (
-          <div key={id} className=' sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
+        {projects.map(({ id, title, des, img, iconLists, link, glink, className }) => (
+          <div key={id} className='sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
             <CardContainer className="inter-var">
-              <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardBody className={cn("bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border", className)}>
                 <CardItem
                   translateZ="50"
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
+                  className={cn("text-xl font-bold text-neutral-600 dark:text-white")}
                 >
                   {title}
                 </CardItem>

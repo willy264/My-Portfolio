@@ -1,6 +1,6 @@
-import { FaLocationArrow } from 'react-icons/fa6'
 import { socialMedia } from '../../data'
 import { GrConnect } from 'react-icons/gr'
+import ShimmeringButton from './ui/ShimmeringButton'
 
 const Footer = () => {
   return (
@@ -17,9 +17,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center gap-5 relative">
         <a href="mailto:daviswill264@gmail.com">
-          <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 py-6  text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-xl font-bold z-20">
-            <GrConnect />
-          </button>
+          <ShimmeringButton icon={<GrConnect />} />
         </a>
         <p className="md:text-base text-sm md:font-normal font-light">Copyright © 2024 U~Iriamuzu</p>
         <div className="flex md:grid items-center md:gap-3 gap-6 md:absolute md:bottom-16">

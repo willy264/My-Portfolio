@@ -3,7 +3,7 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
-import { BackgroundLines } from './ui/BackgroundLines'
+import ShimmeringButton from "./ui/ShimmeringButton";
 
 function Approach() {
   return (
@@ -11,7 +11,6 @@ function Approach() {
       <h1 className="heading">
         My <span className="text-purple">Approach</span>
       </h1>
-      <BackgroundLines />
       <div
         className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card 
@@ -104,9 +103,7 @@ const Card = ({
 const AceternityIcon = ({order}) => {
   return (
     <div>
-        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 py-6  text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-xl font-bold">
-          {order}
-        </button>
+      <ShimmeringButton title={order} />
     </div>
   );
 };

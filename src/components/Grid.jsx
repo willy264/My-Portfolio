@@ -1,4 +1,5 @@
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
+
 // import { gridItems } from '../../data'
 
 const Grid = () => {
@@ -8,7 +9,7 @@ const Grid = () => {
       id: 1,
       title: "I prioritize client collaboration, fostering open communication ",
       description: "",
-      className: "md:row-span-2 col-span-1 md:col-span-6 lg:col-span-3",
+      className: "lg:row-start-3 lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end",
       img: "/b1.svg",
@@ -49,9 +50,9 @@ const Grid = () => {
       id: 5,
       title: "Currently building a ReactJs E-Commerce web-site",
       description: "The Inside Scoop",
-      className: "md:row-span-2 col-span-1 md:col-span-6 lg:col-span-3",
+      className: "lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-      titleClassName: "justify-center md:justify-start md:mt-40 lg:justify-center lg:mt-0",
+      titleClassName: "justify-center md:justify-start md:mt-10 lg:justify-center lg:mt-0",
       img: "/b5.svg",
       spareImg: "/grid.svg",
     },
@@ -59,7 +60,7 @@ const Grid = () => {
       id: 6,
       title: "Do you want to start a project together?",
       description: "",
-      className: "lg:col-span-3 md:col-span-3 md:row-span-1 md:row-start-4 md:col-start-4",
+      className: "lg:col-span-3 md:col-span-3 md:row-span-1 lg:row-start-4  md:row-start-3 md:col-start-4",
       imgClassName: "",
       titleClassName: "justify-center md:max-w-full max-w-60 text-center",
       img: "",

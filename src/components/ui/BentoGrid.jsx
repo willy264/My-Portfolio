@@ -6,9 +6,10 @@ import { BackgroundGradientAnimation } from './GradientBg';
 import { GlobeDemo } from './GridGlobe';
 import animationData from '../../../data/confetti.json'
 import Lottie from 'react-lottie';
-import MagicButton from './MagicButton'
+// import MagicButton from './MagicButton'
 import { BackgroundBeams } from "../ui/BackgroundBeams"
 import { IoCopyOutline } from 'react-icons/io5';
+import ShimmeringButton from './ShimmeringButton'
 
 export const BentoGrid = ({
   className,
@@ -17,7 +18,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(className,
-        "grid grid-cols-1 md:auto-rows-[18rem] md:grid-cols-6 gap-10 mx-auto"
+        "grid grid-cols-1 lg:auto-rows-[18rem] md:auto-rows-[12rem] auto-rows-[12rem] md:grid-cols-6 gap-10 mx-auto"
       )}>
       {children}
     </div>
@@ -102,18 +103,18 @@ export const BentoGridItem = ({
               
           {id === 3 && <BackgroundBeams />}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 top-0">
-              <div className="flex flex-col gap-3 lg:gap-8">
-                {['HTML', 'CSS', 'JavaScript', 'Git'].map((item) => (
-                  <span key={item} className='py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'>
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 top-0 tracking-wider">
+              <div className="flex flex-col gap-3 lg:gap-5">
+                {['HTML', 'CSS', 'JavaScript', 'Github'].map((item) => (
+                  <span key={item} className='py-2 lg:py-3 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'>
                     {item}
                   </span>
                 ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span>
               </div>
-              <div className="flex flex-col gap-3 lg:gap-8">
+              <div className="flex flex-col gap-3 lg:gap-8 mr-1">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span>
-                {['React.js', 'Tailwind Css', 'Next.js'].map((item) => (
+                {['React.js', 'Tailwind', 'Next.js'].map((item) => (
                   <span key={item} className='py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'>
                     {item}
                   </span>
@@ -125,7 +126,7 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative">
-              <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}>
+              <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "hidden"}`}>
                 <Lottie options={{
                   loop: copied,
                   autoplay: copied,
@@ -135,14 +136,12 @@ export const BentoGridItem = ({
                   }
                 }} />
               </div>
-
-              <MagicButton
-                title={copied ? 'E-mail copied' : "Copy my E-mail"}
-                icon={<IoCopyOutline />}
-                position='left'
-                otherClasses='!bg-[#000000]'
-                handleClick={handleCopy}
-              />
+                <ShimmeringButton
+                  title={copied ? 'E-mail copied' : "Copy my E-mail"}
+                  icon={<IoCopyOutline />}
+                  otherClasses='text-sm'
+                  handleClick={handleCopy}
+                />          
             </div>
           )}
         </div>

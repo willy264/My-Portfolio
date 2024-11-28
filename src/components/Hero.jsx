@@ -4,6 +4,8 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { FaLocationArrow } from "react-icons/fa6"
 import { BackgroundBeamsWithCollision } from "./ui/BackgroundBeamsWithCollision"
 import { SparklesCore } from "./ui/Sparkles"
+import { GrConnect } from "react-icons/gr"
+import ShimmeringButton  from "./ui/ShimmeringButton"
 // import { HeroParallax } from "./ui/HeroParallax"
 
 const Hero = () => {
@@ -37,7 +39,8 @@ const Hero = () => {
           </p>
 
           <a href="#about">
-            <MagicButton title='Show my work' icon={<FaLocationArrow />} position='right' />
+            {/* <MagicButton title='Show my work' icon={<FaLocationArrow />} position='right' /> */}
+            <ShimmeringButton title="Show my work" icon={<FaLocationArrow className="text-xs mt-1" />} />
           </a>
         </div>
       </div>

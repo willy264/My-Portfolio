@@ -5,9 +5,8 @@
  **/
 
 import { cn } from "../../lib/utils";
-// import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-// import a from "next/link";
+import { IconBase } from "icons-react";
 import { useRef, useState } from "react";
 
 export const FloatingDock = ({
@@ -27,7 +26,7 @@ const FloatingDockMobile = ({
 }) => {
   const [open, setOpen] = useState(false);
   return (
-    (<div className={cn("relative block md:hidden", className)}>
+    (<div className={cn("relative block md:flex", className)}>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -62,7 +61,8 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-800 flex items-center justify-center">
+        className="h-10 w-10 rounded-full bg-red-500 dark:bg-neutral-800 flex items-center justify-center">
+          {<IconBase />}
         {/* <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" /> */}
       </button>
     </div>)
@@ -79,7 +79,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 rounded-2xl dark:bg-transparent backdrop-blur-xl px-4 pb-3 max-w-fit fixed bottom-10 inset-x-0  border rounded-tl-3xl rounded-tr-3xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-5  items-center justify-center space-x-4 border-white/[0.2]",
+        "mx-auto flex md:flex h-16 gap-4 rounded-2xl dark:bg-transparent backdrop-blur-xl px-4 pb-3 max-w-fit fixed bottom-10 inset-x-0  border rounded-tl-3xl rounded-tr-3xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-5  items-center justify-center space-x-4 border-white/[0.2]",
         className
       )}>
       {items.map((item) => (
