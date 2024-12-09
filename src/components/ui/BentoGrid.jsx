@@ -105,7 +105,7 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2 top-0 tracking-wider">
               <div className="flex flex-col gap-3 lg:gap-5">
-                {['HTML', 'CSS', 'JavaScript', 'Github'].map((item) => (
+                {['HTML', 'CSS', 'JavaScript', 'React.js'].map((item) => (
                   <span key={item} className='py-2 lg:py-3 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'>
                     {item}
                   </span>
@@ -113,13 +113,13 @@ export const BentoGridItem = ({
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span>
               </div>
               <div className="flex flex-col gap-3 lg:gap-8 mr-1">
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span>
-                {['React.js', 'Tailwind', 'Next.js'].map((item) => (
+                <span className="py-2 px-3 rounded-lg text-center bg-[#10132e]"></span>
+                {['Tailwind', 'Threejs', 'Framer Motion', 'Github'].map((item) => (
                   <span key={item} className='py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'>
                     {item}
                   </span>
                 ))}
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span>
+                {/* <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"></span> */}
               </div>
             </div>
           )}

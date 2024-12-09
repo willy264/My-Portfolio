@@ -158,16 +158,16 @@
 export const testimonials = [
   {
     quote:
-      "I had the pleasure of working alongside Williams on our recent project, and I cannot speak highly enough of his contributions. His dedication, expertise, and collaborative spirit made a significant impact on our success. His attention to detail and commitment to excellence were truly inspiring.",
+      "Willliams is a talented and dedicated frontend developer. He has a strong commitment to creating user-friendly websites. His ability to quickly learn and adapt to new technologies is very impressive. Working with him was a pleasure and I would recommend him to anyone looking for a frontend developer.",
     name: "Faraq Salami",
-    designation: "Co-hacker in the Deca-Hack ",
+    designation: "Studied with him at Dataskills Computer School",
     src: 'OIP (17).jpeg',
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    designation: "Director of AlphaStream Technologies",
+      "Collabrating with Williams was a great experience. He is a very talented developer and has a great work ethic. He is also very easy to work with and always willing to help. He is a fast and efficient team player,.",
+    name: "Emmanuel Joseph",
+    designation: "Co-hacker in the ICP Deca-hackathon",
     src: 'OIP (15).jpeg',
   },
   {
@@ -216,28 +216,28 @@ export const workExperience = [
   {
     id: 1,
     title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    desc: "Worked as a frontend engineer intern at HNG Tech, where I was responsible for developing user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Software Engineer Intern",
+    desc: "At Web3Bridge cohort, I worked as a software engineer intern and developed and maintained user-facing features using both frontend and backend technologies.",
     className: "md:col-span-2", 
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Lead Frontend Development at ICP Deca-hackathon",
+    desc: "Led the Frontend development of a mental health website for the ICP Deca-hackathon, from initial concept to deployment on website stores.",
     className: "md:col-span-2", 
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Frontend Development using AI for designs",
+    desc: "The AiCE program at alx_africa, I was tasked with developing a frontend portfolio website using AI generated designs.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
