@@ -19,7 +19,7 @@ const Footer = () => {
         <a href="mailto:daviswill264@gmail.com">
           <ShimmeringButton icon={<GrConnect />} />
         </a>
-        <p className="md:text-base text-sm md:font-normal font-light">Copyright © 2024 U~Iriamuzu</p>
+        <p className="md:text-base text-sm md:font-normal font-light">Copyright © 2024 Williams</p>
         <div className="flex md:grid items-center md:gap-3 gap-6 md:absolute md:bottom-16">
           {socialMedia.map((profile) => (
             <a href={profile.link} className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-150 bg-opacity-75 bg-black rounded-lg border border-black-300" key={profile.id}>

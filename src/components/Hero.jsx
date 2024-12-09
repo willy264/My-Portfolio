@@ -35,7 +35,7 @@ const Hero = () => {
           {/* The Ultimate <br /> development studio */}
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m U~Iriamuzu, a React.js Developer based in Nigeria.
+            Hi! I&apos;m Williams Akinwamide, a React.js Developer based in Nigeria.
           </p>
 
           <a href="#about">
