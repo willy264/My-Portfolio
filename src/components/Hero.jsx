@@ -1,4 +1,3 @@
-import MagicButton from "./ui/MagicButton"
 import { Spotlight } from "./ui/Spotlight"
 import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { FaLocationArrow } from "react-icons/fa6"
@@ -7,6 +6,31 @@ import { SparklesCore } from "./ui/Sparkles"
 import { GrConnect } from "react-icons/gr"
 import ShimmeringButton  from "./ui/ShimmeringButton"
 // import { HeroParallax } from "./ui/HeroParallax"
+
+import { FaReact } from 'react-icons/fa';
+import {
+  SiThreedotjs,
+  SiFramer,
+  SiTailwindcss,
+  SiSass,
+  SiTypescript,
+  SiGreensock,
+  SiSentry,
+  SiVite,
+} from "react-icons/si";
+import { useState } from 'react';
+
+const toolIcons = {
+  React: <FaReact className="text-blue-500 text-2xl" />,
+  "Three.js": <SiThreedotjs className="text-white-500 text-2xl" />,
+  FramerMotion: <SiFramer className="text-purple-500 text-2xl" />,
+  Tailwind: <SiTailwindcss className="text-blue-400 text-2xl" />,
+  Sass: <SiSass className="text-pink-500 text-2xl" />,
+  // TypeScript: <SiTypescript className="text-blue-600 text-2xl" />,
+  GSAP: <SiGreensock className="text-green-500 text-2xl" />,
+  Sentry: <SiSentry className="text-gray-500 text-2xl" />,
+  Vite: <SiVite className="text-yellow-300 text-2xl" />,
+};
 
 const Hero = () => {
   return (
@@ -29,6 +53,16 @@ const Hero = () => {
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Web Magic with react.js
           </h2>
+            <div className="flex gap-5 mt-2">
+              {Object.entries(toolIcons).map(([name, icon], index) => (
+                <div key={index} className="relative group cursor-cell">
+                  <span className="tooltip absolute top-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {name}
+                  </span>
+                  {icon}
+                </div>
+              ))}
+            </div>
           
           <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Designing the future, one pixel at a time.' />
 
@@ -48,5 +82,6 @@ const Hero = () => {
     
   )
 }
+
 
 export default Hero

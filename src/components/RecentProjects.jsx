@@ -73,7 +73,7 @@ const projects = [
     img: "/project3.PNG",
     link: "https://e-commerce-2kdi.vercel.app/",
     glink: "https://github.com/willy264/E-Commerce.git",
-    tools: ['React', 'NodeJS', 'Firebase', 'Stripe'],
+    tools: ['React', 'NodeJS', 'Firebase', 'Stripe', 'Tailwind'],
   },
 ];
 
