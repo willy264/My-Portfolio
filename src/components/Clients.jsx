@@ -6,7 +6,7 @@ import { AnimatedTestimonials } from './ui/animated-testimonials'
 const Clients = () => {
   return (
     <div className='py-20' id='testimonials'>
-      <h1 className="heading">
+      <h1 className="heading capitalize">
         Testimonials from 
         <span className='text-purple'>  satisfied clients</span>
       </h1>
