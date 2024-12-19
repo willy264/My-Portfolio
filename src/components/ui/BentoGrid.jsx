@@ -34,7 +34,7 @@ export const BentoGridItem = ({
   imgClassName, 
   titleClassName,
   spareImg,
-
+  spareImgClassName,
 }) => {
 
   const [copied, setCopied] = useState(false)
@@ -68,13 +68,13 @@ export const BentoGridItem = ({
         </div>
 {/* IMAGES */}
         <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"} `}>
-          {/* for spareImg in 4 and 5 */}
+          {/* for spareImg in 1, 4 and 5 */}
           {spareImg && (
             <img
               src={spareImg}
               alt={spareImg}
-              width={220}
-              className="object-cover object-center w-full h-full"
+              // width={220}
+              className={cn('object-cover object-center w-full h-full ml-', spareImgClassName)}  
             />
           )}
         </div>

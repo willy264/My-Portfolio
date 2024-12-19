@@ -9,10 +9,10 @@ const Grid = () => {
       id: 1,
       title: "I prioritize client collaboration, fostering open communication ",
       description: "",
-      className: "lg:row-start-3 lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
-      imgClassName: "w-full h-full",
+      className: "lg:row-start-2 lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
+      imgClassName: "w-full h-full opacity-[.4]",
       titleClassName: "justify-end",
-      img: "/b1.svg",
+      img: "/CollaboComp.webp",
       spareImg: "",
     },
     {
@@ -43,7 +43,8 @@ const Grid = () => {
       imgClassName: "",
       titleClassName: "justify-start",
       img: "/grid.svg",
-      spareImg: "/b4.svg",
+      spareImg: "/TechComp.webp",
+      spareImgClassName: 'opacity-[.3] w-80',
     },
   
     {
@@ -71,7 +72,7 @@ const Grid = () => {
   return (
     <section id='about'>
       <BentoGrid>
-        {gridItems.map(({id, title, description, className, img, imgClassName, titleClassName, spareImg}, i) => 
+        {gridItems.map(({id, title, description, className, img, imgClassName, titleClassName, spareImg, spareImgClassName}, i) => 
           <BentoGridItem 
             id={id}
             key={i}
@@ -82,6 +83,7 @@ const Grid = () => {
             imgClassName={imgClassName}
             titleClassName={titleClassName}
             spareImg={spareImg}
+            spareImgClassName={spareImgClassName}
           />
         )}
       </BentoGrid>
