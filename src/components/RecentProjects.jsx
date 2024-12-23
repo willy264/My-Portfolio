@@ -13,6 +13,7 @@ import {
   SiStripe,
   SiVite,
   SiStyledcomponents,
+  SiYoutube,
 } from "react-icons/si";
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 import { cn } from "../lib/utils";
@@ -68,6 +69,24 @@ const projects = [
   },
   {
     id: 6,
+    title: "TubeHub: Video Streaming Platform",
+    des: "A React-based video streaming platform offering a seamless experience for watching and discovering videos across various genres with a sleek interface and robust features.",
+    img: "/project7.PNG",
+    link: "https://8-youtube-clone.vercel.app/",
+    glink: "https://github.com/willy264/8.youtube-clone",
+    tools: ['React', 'Styled Components', 'CSS', 'YouTube API'],
+  },
+  // {
+  //   id: 7,
+  //   title: "Meme Factory: Meme generator application with React",
+  //   des: "Customize memes with your own text, fonts and random images",
+  //   img: "/project2.PNG",
+  //   link: "https://7-meme-generator-react.vercel.app/",
+  //   glink: "https://github.com/willy264/7.meme-generator-react.git",
+  //   tools: ['React', 'Styled Components', 'CSS'],
+  // },
+  {
+    id: 7,
     title: "EcoFashionMart: An E-commerce Website with React",
     des: "Your one-stop online shop, explore a wide range of products. Enjoy convenient online shopping, secure payments using stripe.",
     img: "/project3.PNG",
@@ -96,6 +115,7 @@ const toolIcons = {
   Stripe: <SiStripe className="text-indigo-500 text-2xl" />,
   Vite: <SiVite className="text-purple-400 text-2xl" />,
   "Styled Components": <SiStyledcomponents className="text-pink-500 text-2xl" />,
+  "YouTube API": <SiYoutube  className="text-red-500 text-2xl" />,
 };
 
 const RecentProjects = () => {
