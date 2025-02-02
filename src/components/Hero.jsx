@@ -1,9 +1,7 @@
 import { Spotlight } from "./ui/Spotlight"
 import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { FaLocationArrow } from "react-icons/fa6"
-import { BackgroundBeamsWithCollision } from "./ui/BackgroundBeamsWithCollision"
 import { SparklesCore } from "./ui/Sparkles"
-import { GrConnect } from "react-icons/gr"
 import ShimmeringButton  from "./ui/ShimmeringButton"
 // import { HeroParallax } from "./ui/HeroParallax"
 
@@ -18,7 +16,6 @@ import {
   SiSentry,
   SiVite,
 } from "react-icons/si";
-import { useState } from 'react';
 
 const toolIcons = {
   React: <FaReact className="text-blue-500 text-2xl" />,
