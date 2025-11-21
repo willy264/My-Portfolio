@@ -49,7 +49,7 @@ const Grid = () => {
   
     {
       id: 5,
-      title: "Currently building a ReactJs E-Commerce web-site",
+      title: "Currently building a React Native secure digital wallet - VERZA.",
       description: "The Inside Scoop",
       className: "lg:row-span-2 md:row-span-1 col-span-1 md:col-span-6 lg:col-span-3",
       imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
