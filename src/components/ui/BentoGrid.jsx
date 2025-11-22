@@ -132,6 +132,19 @@ export const BentoGridItem = ({
             </div>
           )}
 
+          {id === 5 && (
+            <div className="mt-5 relative">
+              <a 
+                href="https://verzaapp.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm lg:text-base text-blue-400 hover:text-blue-300 transition-colors duration-200 underline decoration-blue-400/50 hover:decoration-blue-300 z-10"
+              >
+                Visit VERZA App →
+              </a>
+            </div>
+          )}
+
           {id === 6 && (
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "hidden"}`}>
