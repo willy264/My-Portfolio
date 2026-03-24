@@ -1,0 +1,145 @@
+MOCK DATA REPLACEMENT AUDIT
+Generated: 2026-03-24
+
+Purpose
+This file lists the hardcoded/mock content in the portfolio that should be replaced with real data sources.
+
+Scope
+- Included: user-facing hardcoded arrays, repeated JSX content blocks, demo datasets, hardcoded contact/profile values, and inactive demo content still stored in the repo.
+- Excluded: purely visual constants such as animation paths/colors and real supporting assets such as `data/globe.json` world geometry and `data/confetti.json`.
+
+Recommended source model
+- `siteSettings`: navigation, footer CTA, contact email, social links, copyright owner/year.
+- `profile`: hero headline/subheadline/location, featured tech stack, about highlights.
+- `projects`: featured projects, current project/build, live links, repo links, tools, media.
+- `testimonials`: quote, author, role/company, avatar/image.
+- `experience`: role, organization, summary, logo/thumbnail, order.
+- `partners` or `clients`: company/logo rows if that section is restored.
+- `processSteps`: the "Approach" cards.
+- `geoActivity` or `serviceAreas`: globe arc coordinates if the globe should represent real activity.
+
+ACTIVE REPLACEMENT TARGETS
+
+1. `src/App.jsx:16`
+Current mock:
+- `navItems` is an inline array with labels, anchors, and JSX icons.
+Recommended implementation:
+- Use a `siteSettings.navigation` document or `/api/site-settings` response with `label`, `href`, and `iconKey`, then map `iconKey` to React icons in code.
+
+2. `src/components/Hero.jsx:20`
+Current mock:
+- The hero tech stack is hardcoded in `toolIcons`.
+Recommended implementation:
+- Use `profile.featuredSkills` with serializable skill keys and keep the icon-to-component map in code.
+
+3. `src/components/Hero.jsx:51`
+4. `src/components/Hero.jsx:64`
+5. `src/components/Hero.jsx:69`
+6. `src/components/Hero.jsx:74`
+Current mock:
+- The eyebrow text, hero headline, intro sentence, and CTA label are hardcoded in the component.
+Recommended implementation:
+- Use a `homepageHero` or `profile.hero` document with `eyebrow`, `headline`, `intro`, and `ctaLabel`.
+
+7. `src/components/Grid.jsx:7`
+Current mock:
+- `gridItems` is an inline card dataset for the About/Highlights section.
+Recommended implementation:
+- Use a `profile.highlights` or `homepage.aboutCards` collection with `title`, `description`, `media`, `cta`, and `sortOrder`.
+
+8. `src/components/Grid.jsx:52`
+9. `src/components/ui/BentoGrid.jsx:138`
+Current mock:
+- The "Currently building ... VERZA" card title and the VERZA external link are split across two files and hardcoded.
+Recommended implementation:
+- Use a single `projects.currentBuild` or `featuredProject` record and pass its title/link into the card renderer.
+
+10. `src/components/ui/BentoGrid.jsx:44`
+11. `src/components/Footer.jsx:19`
+Current mock:
+- The copy-to-clipboard email and the mailto link are hardcoded as `daviswill264@gmail.com`.
+Recommended implementation:
+- Use `siteSettings.contact.email` and read the same value everywhere it is rendered or copied.
+
+12. `src/components/ui/BentoGrid.jsx:108`
+13. `src/components/ui/BentoGrid.jsx:117`
+14. `src/components/ui/BentoGrid.jsx:125`
+Current mock:
+- The skill-chip columns are hardcoded arrays inside the UI component.
+Recommended implementation:
+- Use a `skills` collection or `profile.techStackGroups` structure and render the chips from returned data.
+
+15. `src/components/RecentProjects.jsx:23`
+16. `src/components/RecentProjects.jsx:144`
+Current mock:
+- `projects` is an inline array containing project names, summaries, screenshots, live URLs, GitHub URLs, and tool lists.
+Recommended implementation:
+- Use a `projects` collection or API endpoint and store only serializable values like `toolKeys`; keep the icon lookup map in code.
+
+17. `data/index.js:158`
+18. `src/components/Clients.jsx:14`
+Current mock:
+- `testimonials` is a local array used directly by the testimonials carousel.
+Recommended implementation:
+- Use a `testimonials` collection backed by a CMS/database and return image URLs instead of local placeholder names when possible.
+
+19. `data/index.js:215`
+20. `src/components/Experience.jsx:13`
+Current mock:
+- `workExperience` is a local array for the experience cards.
+Recommended implementation:
+- Use an `experience` collection or resume endpoint with `role`, `organization`, `summary`, `image`, and `displayOrder`.
+
+21. `data/index.js:246`
+22. `src/components/Footer.jsx:24`
+Current mock:
+- `socialMedia` is a local array of social icons and profile URLs.
+Recommended implementation:
+- Use `siteSettings.socialLinks` or `profile.socials` and map each item by a platform key.
+
+23. `src/components/Approach.jsx:17`
+24. `src/components/Approach.jsx:27`
+25. `src/components/Approach.jsx:43`
+Current mock:
+- The three approach/process cards are hardcoded as repeated JSX blocks.
+Recommended implementation:
+- Use a `processSteps` collection with `phase`, `title`, `description`, and optional visual theme fields.
+
+26. `src/components/Footer.jsx:14`
+27. `src/components/Footer.jsx:16`
+28. `src/components/Footer.jsx:22`
+Current mock:
+- The footer CTA copy and copyright text are hardcoded.
+Recommended implementation:
+- Use `siteSettings.footer` for CTA copy and generate the year dynamically or serve it from settings.
+
+29. `src/components/ui/GridGlobe.jsx:33`
+Current mock:
+- `sampleArcs` is demo coordinate data powering the globe animation.
+Recommended implementation:
+- Use a `geoActivity`/`serviceAreas` dataset if the globe should reflect real locations, otherwise remove the fake arc data and keep the globe decorative.
+
+INACTIVE OR STALE DEMO CONTENT
+
+30. `data/index.js:4`
+Current mock:
+- `products` is a commented-out Aceternity demo dataset and is not part of the live app.
+Recommended implementation:
+- Delete it or replace it with a real `featuredProjects` source only if the parallax section is brought back.
+
+31. `data/index.js:100`
+Current mock:
+- There is a second commented-out `projects` dataset that duplicates the live project content source.
+Recommended implementation:
+- Delete it and keep a single canonical `projects` source to avoid divergence.
+
+32. `data/index.js:182`
+33. `src/components/Clients.jsx:21`
+Current mock:
+- `companies` is a local logo dataset, but its render block is currently commented out.
+Recommended implementation:
+- Use a `partners`/`clients` collection only if this section is restored; otherwise remove the unused dataset.
+
+Implementation note
+- The cleanest fit for this repo is to keep JSX/icon components in code and move only serializable content into a CMS, JSON API, or backend endpoint.
+- If you want a low-complexity first step, replace the scattered inline arrays with one `src/content/` layer now, then swap that layer for a CMS/API later without changing the section components again.
