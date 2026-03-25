@@ -1,4 +1,4 @@
-﻿import { globeRoutes } from "./globe-routes";
+import { globeRoutes } from "./globe-routes";
 import type {
   AboutGridItem,
   ApproachStep,
@@ -178,7 +178,7 @@ export const projects: ProjectItem[] = [
     image: "/project-0gramp.png",
     liveUrl: "https://0g-ramp.vercel.app/",
     githubUrl: "https://github.com/willy264/0gRamp",
-    toolKeys: ["typescript", "javascript", "css", "html"],
+    toolKeys: ["react", "vite", "tailwind", "typescript", "framer-motion"],
   },
   {
     id: 2,
@@ -188,7 +188,7 @@ export const projects: ProjectItem[] = [
     image: "/project-mentalverse.png",
     liveUrl: "https://mentalverse.vercel.app/",
     githubUrl: "https://github.com/MentalverseICP/MentalVerse",
-    toolKeys: ["typescript", "javascript", "css", "html"],
+    toolKeys: ["react", "typescript", "javascript", "nodejs", "css"],
   },
   {
     id: 3,
@@ -208,7 +208,7 @@ export const projects: ProjectItem[] = [
     image: "/project-flux.png",
     liveUrl: "https://flux-ashy-nine.vercel.app/",
     githubUrl: "https://github.com/Maxima24/flux-frontend",
-    toolKeys: ["nextjs", "react", "tailwind", "typescript", "framer-motion"],
+    toolKeys: ["nextjs", "react", "tailwind", "typescript", "framer-motion", "threejs"],
   },
 ];
 

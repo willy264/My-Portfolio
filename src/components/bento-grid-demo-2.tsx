@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import {
   IconClipboardCopy,
   IconFileBroken,
@@ -29,7 +30,65 @@ type BentoDemoItem = {
   icon: ReactNode;
 };
 
-export default function BentoGridSecondDemo() {
+type CardEntranceDirection = {
+  x: number;
+  y: number;
+  rotate: number;
+  scale: number;
+};
+
+const cardEntranceDirections: CardEntranceDirection[] = [
+  { x: -90, y: 0, rotate: -4, scale: 0.92 },
+  { x: 90, y: 0, rotate: 4, scale: 0.92 },
+  { x: 0, y: -90, rotate: -3, scale: 0.94 },
+  { x: 0, y: 90, rotate: 3, scale: 0.94 },
+  { x: -70, y: -60, rotate: -5, scale: 0.9 },
+  { x: 70, y: 60, rotate: 5, scale: 0.9 },
+];
+
+const AnimatedBentoItem = ({
+  item,
+  motionConfig,
+}: {
+  item: BentoDemoItem;
+  motionConfig: CardEntranceDirection;
+}) => {
+  const itemRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: itemRef,
+    offset: ["start 92%", "center 58%"],
+  });
+
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 180,
+    damping: 28,
+    mass: 0.9,
+  });
+
+  const x = useTransform(progress, [0, 1], [motionConfig.x, 0]);
+  const y = useTransform(progress, [0, 1], [motionConfig.y, 0]);
+  const rotate = useTransform(progress, [0, 1], [motionConfig.rotate, 0]);
+  const scale = useTransform(progress, [0, 1], [motionConfig.scale, 1]);
+  const opacity = useTransform(progress, [0, 0.35, 1], [0.18, 0.65, 1]);
+
+  return (
+    <motion.div
+      ref={itemRef}
+      className={item.className}
+      style={{ x, y, rotate, scale, opacity }}
+    >
+      <BentoGridItem
+        title={item.title}
+        description={item.description}
+        header={item.header}
+        className="h-full will-change-transform"
+        icon={item.icon}
+      />
+    </motion.div>
+  );
+};
+
+const BentoGridSecondDemo = () => {
   const [collaborationItem, globeItem, techStackItem, passionItem, featureItem, contactItem] =
     aboutGridItems;
 
@@ -80,19 +139,16 @@ export default function BentoGridSecondDemo() {
 
   return (
     <BentoGrid className="mx-auto max-w-6xl md:auto-rows-[20rem] md:grid-cols-2">
-      {items.map((item) => (
-        <BentoGridItem
+      {items.map((item, index) => (
+        <AnimatedBentoItem
           key={item.title}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={item.className}
-          icon={item.icon}
+          item={item}
+          motionConfig={cardEntranceDirections[index]}
         />
       ))}
     </BentoGrid>
   );
-}
+};
 
 const BaseHeader = ({
   children,
@@ -261,3 +317,5 @@ const ContactDescription = ({ item }: { item: AboutGridItem }) => {
     </div>
   );
 };
+
+export default BentoGridSecondDemo;
