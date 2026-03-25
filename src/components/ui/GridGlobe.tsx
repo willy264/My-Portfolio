@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { serviceAreaRoutes } from "../../../data";
 
 const World = lazy(() => import("./Globe").then((module) => ({ default: module.World })));
@@ -30,10 +30,10 @@ export function GlobeDemo() {
   };
 
   return (
-    <div className="absolute -left-5 top-36 flex h-full w-full items-center justify-center cursor-grabbing md:top-40">
-      <div className="relative mx-auto h-96 w-full max-w-7xl overflow-hidden px-4">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-40 select-none bg-gradient-to-b from-transparent to-white dark:to-black" />
-        <div className="absolute z-10 h-72 w-full md:h-full">
+    <div className="pointer-events-none absolute inset-x-0 flex h-[100%] items-end justify-center md:h-[100%]">
+      <div className="relative h-full w-full max-w-[24rem] overflow-hidden">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-32 bg-gradient-to-b from-transparent to-[#04071d]" />
+        <div className="absolute inset-0 z-10">
           <Suspense fallback={null}>
             <World data={serviceAreaRoutes} globeConfig={globeConfig} />
           </Suspense>

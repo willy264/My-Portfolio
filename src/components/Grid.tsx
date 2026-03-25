@@ -1,14 +1,9 @@
-import { aboutGridItems } from "../../data";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import BentoGridSecondDemo from "./bento-grid-demo-2";
 
 const Grid = () => {
   return (
-    <section id="about">
-      <BentoGrid>
-        {aboutGridItems.map((item) => (
-          <BentoGridItem key={item.id} item={item} />
-        ))}
-      </BentoGrid>
+    <section id="about" className="w-full py-20">
+      <BentoGridSecondDemo />
     </section>
   );
 };

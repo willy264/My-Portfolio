@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open --port 3000",
+    "start": "vite --open --port 3000",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -15,6 +16,7 @@
     "@sentry/node": "^8.36.0",
     "@sentry/react": "^8.36.0",
     "@sentry/vite-plugin": "^2.22.6",
+    "@tabler/icons-react": "^3.40.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.5.0",
     "clsx": "^2.1.1",

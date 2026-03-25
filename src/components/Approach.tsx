@@ -1,53 +1,61 @@
 "use client";
 
-import React, { type ReactNode, type SVGProps } from "react";
+import { useState, type ReactNode, type SVGProps } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { approachSteps, sectionContent } from "../../data";
 import type { ApproachTheme } from "../../data/types";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
-import ShimmeringButton from "./ui/ShimmeringButton";
 
 const approachThemeProps: Record<
   ApproachTheme,
   {
     animationSpeed: number;
     containerClassName: string;
-    colors?: number[][];
+    colors?: [number, number, number][];
     dotSize?: number;
   }
 > = {
   emerald: {
     animationSpeed: 5.1,
-    containerClassName: "bg-emerald-900",
+    containerClassName: "bg-[#190729]/95",
+    colors: [
+      [141, 92, 196],
+      [171, 73, 126],
+    ],
   },
   midnight: {
-    animationSpeed: 3,
-    containerClassName: "bg-black",
+    animationSpeed: 3.2,
+    containerClassName: "bg-[#12051f]/95",
     colors: [
-      [236, 72, 153],
-      [232, 121, 249],
+      [125, 100, 194],
+      [165, 69, 126],
+      [109, 70, 184],
     ],
     dotSize: 2,
   },
   sky: {
-    animationSpeed: 3,
-    containerClassName: "bg-sky-600",
-    colors: [[125, 211, 252]],
+    animationSpeed: 2.7,
+    containerClassName: "bg-[#1a0830]/95",
+    colors: [
+      [113, 45, 177],
+      [164, 130, 196],
+    ],
   },
 };
 
 function Approach() {
   return (
-    <section className="relative w-full overflow-hidden py-20 text-center">
+    <section id="approach" className="relative w-full overflow-hidden py-20">
       <h1 className="heading">
-        {sectionContent.approach.heading} <span className="text-purple">{sectionContent.approach.accent}</span>
+        {sectionContent.approach.heading}{" "}
+        <span className="text-purple">{sectionContent.approach.accent}</span>
       </h1>
-      <div className="my-20 flex flex-col items-center justify-center gap-4 lg:flex-row">
+      <div className="my-16 grid w-full gap-6 lg:grid-cols-3">
         {approachSteps.map((step) => (
           <Card
             key={step.phase}
             title={step.title}
-            icon={<AceternityIcon order={step.phase} />}
+            icon={<PhasePill order={step.phase} />}
             description={step.description}
           >
             <CanvasRevealEffect
@@ -74,48 +82,62 @@ const Card = ({
   children: ReactNode;
   description: string;
 }) => {
-  const [hovered, setHovered] = React.useState(false);
+  const [hovered, setHovered] = useState(false);
+  const activateHover = () => setHovered(true);
+  const deactivateHover = () => setHovered(false);
 
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="group/canvas-card relative mx-auto flex h-[30rem] w-full max-w-sm items-center justify-center border border-black/[0.2] p-4 dark:border-white/[0.2] lg:h-[30rem]"
+      className="group/canvas-card relative mx-auto flex min-h-[22rem] w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-purple-950/55 bg-[#080314] p-6 text-left shadow-[0_30px_80px_rgba(76,29,149,0.18)] transition duration-300 hover:-translate-y-1 hover:border-white/15 focus-within:-translate-y-1 focus-within:border-white/15 md:min-h-[24rem]"
+      onMouseEnter={activateHover}
+      onMouseLeave={deactivateHover}
+      onFocus={activateHover}
+      onBlur={deactivateHover}
+      tabIndex={0}
     >
-      <Icon className="absolute -top-3 -left-3 h-6 w-6 text-black dark:text-white" />
-      <Icon className="absolute -bottom-3 -left-3 h-6 w-6 text-black dark:text-white" />
-      <Icon className="absolute -top-3 -right-3 h-6 w-6 text-black dark:text-white" />
-      <Icon className="absolute -bottom-3 -right-3 h-6 w-6 text-black dark:text-white" />
       <AnimatePresence>
         {hovered ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute inset-0 h-full w-full">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="pointer-events-none absolute inset-0"
+          >
             {children}
           </motion.div>
         ) : null}
       </AnimatePresence>
-      <div className="relative z-20">
-        <div className="absolute top-[50%] left-[50%] mx-auto flex w-full -translate-x-[-50%] -translate-y-[-50%] items-center justify-center text-center transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0">
-          {icon}
+
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
+
+      <div className="relative z-20 flex h-full w-full flex-col justify-between">
+        <div className="flex items-start justify-between gap-4">
+          <div>{icon}</div>
+          <div className="rounded-full border border-white/10 bg-white/5 p-2 text-white/40 backdrop-blur-sm transition duration-300 group-hover/canvas-card:rotate-45 group-hover/canvas-card:text-white/80">
+            <Icon className="h-5 w-5" />
+          </div>
         </div>
-        <h2 className="relative z-10 mt-4 text-3xl font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white">
-          {title}
-        </h2>
-        <h2
-          className="relative z-10 mt-4 text-sm font-bold text-black opacity-0 transition duration-200 group-hover/canvas-card:-translate-y-2 group-hover/canvas-card:text-white group-hover/canvas-card:opacity-100 dark:text-white"
-          style={{ color: "#e4ecff" }}
-        >
-          {description}
-        </h2>
+
+        <div className="space-y-4">
+          <h2 className="max-w-xs text-2xl font-bold text-white transition duration-300 group-hover/canvas-card:-translate-y-1">
+            {title}
+          </h2>
+          <p className="max-w-sm text-sm leading-6 text-white/70 transition duration-300 group-hover/canvas-card:text-white/90">
+            {description}
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-const AceternityIcon = ({ order }: { order: string }) => {
+const PhasePill = ({ order }: { order: string }) => {
   return (
-    <div>
-      <ShimmeringButton title={order} />
-    </div>
+    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/80 backdrop-blur-sm">
+      {order}
+    </span>
   );
 };
 
