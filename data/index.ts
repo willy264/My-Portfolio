@@ -192,7 +192,7 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 3,
-    title: "Riverr Finance Dashboard",
+    title: "Riverr Finance",
     description:
       "A modern finance dashboard experience with token-focused workflows and responsive data-driven UI.",
     image: "/project-riverr.png",
@@ -202,7 +202,7 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 4,
-    title: "Flux Frontend",
+    title: "Flux",
     description:
       "A polished frontend system with reusable components, smooth interactions, and a scalable Next.js setup.",
     image: "/project-flux.png",

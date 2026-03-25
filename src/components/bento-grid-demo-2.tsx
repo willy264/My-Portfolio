@@ -267,7 +267,7 @@ const ContactHeader = ({ item }: { item: AboutGridItem }) => {
       >
         {null}
       </BackgroundGradientAnimation>
-      <div className="relative z-10 flex h-full w-full items-end p-4 text-sm font-medium text-white/80">
+      <div className="relative z-10 flex h-full w-full items-end p-6 text-sm font-medium text-white/80">
         {item.copyValue}
       </div>
     </BaseHeader>
@@ -292,7 +292,7 @@ const ContactDescription = ({ item }: { item: AboutGridItem }) => {
   };
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-1">
       <p>Reach out directly and we can talk through the project together.</p>
       <div className="relative inline-flex">
         <div className={cn("pointer-events-none absolute -right-6 -top-10", copied ? "block" : "hidden")}>
@@ -310,7 +310,7 @@ const ContactDescription = ({ item }: { item: AboutGridItem }) => {
         <ShimmeringButton
           title={copied ? item.copiedLabel : item.copyLabel}
           icon={<IoCopyOutline />}
-          otherClasses="px-4 py-4 text-sm"
+          otherClasses="px-2 py-2 text-sm"
           handleClick={handleCopy}
         />
       </div>
