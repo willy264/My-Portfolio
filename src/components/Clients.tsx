@@ -1,25 +1,159 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { sectionContent, testimonials } from "../../data";
 
+const carouselCopies = 7;
+
+const getLoopedIndex = (index: number, length: number) => {
+  if (!length) {
+    return 0;
+  }
+
+  return ((index % length) + length) % length;
+};
+
+const getCarouselState = (distance: number) => {
+  const clampedDistance = Math.min(Math.abs(distance), 4);
+  const direction = distance === 0 ? 0 : distance > 0 ? 1 : -1;
+
+  const yOffsets = [0, 18, 42, 72, 96];
+  const scales = [1, 0.84, 0.68, 0.56, 0.48];
+  const opacities = [1, 0.84, 0.58, 0.32, 0.14];
+  const rotations = [0, direction * 2.5, direction * 4.5, direction * 6, direction * 7.5];
+
+  return {
+    y: yOffsets[clampedDistance],
+    scale: scales[clampedDistance],
+    opacity: opacities[clampedDistance],
+    rotate: rotations[clampedDistance],
+    zIndex: 20 - clampedDistance,
+    isActive: clampedDistance === 0,
+  };
+};
+
 const Clients = () => {
-  const [activeIndex, setActiveIndex] = useState(Math.floor(testimonials.length / 2));
-  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const selectorViewportRef = useRef<HTMLDivElement>(null);
+  const selectorTrackRef = useRef<HTMLDivElement>(null);
+
+  const centeredBatch = Math.floor(carouselCopies / 2);
+  const initialVisualIndex = centeredBatch * testimonials.length + Math.floor(testimonials.length / 2);
+
+  const [activeVisualIndex, setActiveVisualIndex] = useState(initialVisualIndex);
+  const [trackShouldAnimate, setTrackShouldAnimate] = useState(true);
+  const [metrics, setMetrics] = useState({
+    viewportWidth: 0,
+    slotWidth: 0,
+    gap: 0,
+  });
+
+  const carouselItems = useMemo(
+    () =>
+      Array.from({ length: carouselCopies }, (_, batchIndex) =>
+        testimonials.map((testimonial, index) => ({
+          key: `${batchIndex}-${index}-${testimonial.name}`,
+          batchIndex,
+          originalIndex: index,
+          testimonial,
+        })),
+      ).flat(),
+    [],
+  );
 
   useEffect(() => {
-    const activeItem = itemRefs.current[activeIndex];
-    activeItem?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
+    if (!testimonials.length) {
+      return;
+    }
+
+    setTrackShouldAnimate(false);
+    setActiveVisualIndex(centeredBatch * testimonials.length + Math.floor(testimonials.length / 2));
+
+    const frame = window.requestAnimationFrame(() => {
+      setTrackShouldAnimate(true);
     });
-  }, [activeIndex]);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, [centeredBatch]);
+
+  useEffect(() => {
+    const updateMetrics = () => {
+      const viewport = selectorViewportRef.current;
+      const track = selectorTrackRef.current;
+      const firstSlot = track?.querySelector<HTMLElement>("[data-carousel-slot='true']");
+
+      if (!viewport || !track || !firstSlot) {
+        return;
+      }
+
+      const trackStyles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(trackStyles.gap || "0");
+
+      setMetrics({
+        viewportWidth: viewport.clientWidth,
+        slotWidth: firstSlot.offsetWidth,
+        gap,
+      });
+    };
+
+    updateMetrics();
+
+    const observer = new ResizeObserver(updateMetrics);
+    if (selectorViewportRef.current) {
+      observer.observe(selectorViewportRef.current);
+    }
+    if (selectorTrackRef.current) {
+      observer.observe(selectorTrackRef.current);
+    }
+
+    window.addEventListener("resize", updateMetrics);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateMetrics);
+    };
+  }, [carouselItems.length]);
+
+  useEffect(() => {
+    if (testimonials.length < 2) {
+      return;
+    }
+
+    const lowerBound = testimonials.length * 2;
+    const upperBound = testimonials.length * (carouselCopies - 2);
+
+    if (activeVisualIndex < lowerBound || activeVisualIndex >= upperBound) {
+      const normalizedIndex = getLoopedIndex(activeVisualIndex, testimonials.length);
+
+      const timeoutId = window.setTimeout(() => {
+        setTrackShouldAnimate(false);
+        setActiveVisualIndex(centeredBatch * testimonials.length + normalizedIndex);
+
+        const frame = window.requestAnimationFrame(() => {
+          setTrackShouldAnimate(true);
+        });
+
+        return () => {
+          window.cancelAnimationFrame(frame);
+        };
+      }, 720);
+
+      return () => {
+        window.clearTimeout(timeoutId);
+      };
+    }
+  }, [activeVisualIndex, centeredBatch]);
 
   if (!testimonials.length) {
     return null;
   }
 
+  const activeIndex = getLoopedIndex(activeVisualIndex, testimonials.length);
   const activeTestimonial = testimonials[activeIndex];
+  const trackX =
+    metrics.slotWidth > 0
+      ? metrics.viewportWidth / 2 - metrics.slotWidth / 2 - activeVisualIndex * (metrics.slotWidth + metrics.gap)
+      : 0;
 
   return (
     <section id="testimonials" className="w-full py-24">
@@ -35,77 +169,108 @@ const Clients = () => {
             Collaborators
           </span>
           <h1 className="mt-5 text-3xl font-bold capitalize text-white sm:text-4xl lg:text-5xl">
-            {sectionContent.testimonials.heading}
-            <span className="bg-gradient-to-r from-white via-slate-200 to-sky-200 bg-clip-text text-transparent">
-              {" "}
+            {sectionContent.testimonials.heading}{" "}
+            <span className="bg-gradient-to-r from-white via-[#c4b5fd] to-[#7dd3fc] bg-clip-text text-transparent">
               {sectionContent.testimonials.accent}
             </span>
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-white/58 sm:text-base">
-            People I have built with, learned with, and shipped alongside. Browse the portrait strip to explore each testimonial.
+            People I have built with, learned with, and shipped alongside. Browse the portrait rail to explore each featured voice.
           </p>
         </motion.div>
 
         <div className="mx-auto mt-14 grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1fr)] lg:items-center lg:gap-10">
-          {/* Image select */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="relative mx-auto w-full max-w-[30rem]"
+            className="relative mx-auto w-full max-w-[34rem]"
           >
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#05030a] to-transparent sm:w-14" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#05030a] to-transparent sm:w-14" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-12 bg-gradient-to-r from-[#05030a] via-[#05030a]/85 to-transparent sm:w-20" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-12 bg-gradient-to-l from-[#05030a] via-[#05030a]/85 to-transparent sm:w-20" />
+            <div className="pointer-events-none absolute inset-x-[16%] top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-            <div className="overflow-x-auto px-3 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <div className="mx-auto flex min-w-max items-center gap-3 sm:gap-4">
-                {testimonials.map((testimonial, index) => {
-                  const isActive = index === activeIndex;
+            <div
+              ref={selectorViewportRef}
+              className="relative h-[14.5rem] overflow-hidden px-2 pt-2 sm:h-[18.5rem] sm:px-4"
+            >
+              <motion.div
+                ref={selectorTrackRef}
+                animate={{ x: trackX }}
+                transition={
+                  trackShouldAnimate
+                    ? { type: "spring", stiffness: 90, damping: 22, mass: 0.9 }
+                    : { duration: 0 }
+                }
+                className="flex h-full items-start gap-2.5 sm:gap-4"
+              >
+                {carouselItems.map((item, itemIndex) => {
+                  const distance = itemIndex - activeVisualIndex;
+                  const state = getCarouselState(distance);
 
                   return (
-                    <motion.button
-                      key={testimonial.name}
-                      ref={(element) => {
-                        itemRefs.current[index] = element;
-                      }}
-                      type="button"
-                      layout
-                      onClick={() => setActiveIndex(index)}
-                      whileHover={{ y: isActive ? -4 : -8, scale: isActive ? 1.01 : 1.03 }}
-                      transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                      className={`relative shrink-0 overflow-hidden rounded-[1.35rem] border transition duration-300 ${
-                        isActive
-                          ? "h-44 w-28 border-white/18 shadow-[0_24px_48px_rgba(0,0,0,0.3)] sm:h-56 sm:w-36"
-                          : "h-24 w-[4.5rem] border-white/8 opacity-80 sm:h-32 sm:w-24"
-                      }`}
-                      aria-label={`Show testimonial from ${testimonial.name}`}
+                    <div
+                      key={item.key}
+                      data-carousel-slot="true"
+                      className="relative flex h-full w-[5.2rem] shrink-0 items-start justify-center sm:w-[6.8rem]"
                     >
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className={`h-full w-full object-cover transition duration-500 ${
-                          isActive ? "scale-100 grayscale-0" : "scale-[1.04] grayscale-[20%]"
-                        }`}
-                      />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      <motion.div
-                        initial={false}
-                        animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 10 }}
-                        transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="absolute inset-x-0 bottom-0 p-3 text-left"
+                      <motion.button
+                        type="button"
+                        onClick={() => setActiveVisualIndex(itemIndex)}
+                        animate={{
+                          y: state.y,
+                          scale: state.scale,
+                          opacity: state.opacity,
+                          rotate: state.rotate,
+                        }}
+                        whileHover={{
+                          y: Math.max(state.y - 8, -8),
+                          scale: state.isActive ? 1.05 : state.scale + 0.08,
+                        }}
+                        transition={{ type: "spring", stiffness: 220, damping: 24 }}
+                        className="relative flex h-[10.8rem] w-[4.8rem] items-end justify-center sm:h-[13.8rem] sm:w-[16rem]"
+                        style={{ zIndex: state.zIndex }}
+                        aria-label={`Show testimonial from ${item.testimonial.name}`}
                       >
-                        <p className="text-xs font-semibold text-white sm:text-sm">{testimonial.name}</p>
-                        <p className="mt-1 line-clamp-2 text-[11px] text-white/62 sm:text-xs">{testimonial.designation}</p>
-                      </motion.div>
-                    </motion.button>
+                        <div
+                          className={`relative h-full w-full overflow-hidden rounded-[1.4rem] border transition duration-500 ${
+                            state.isActive
+                              ? "border-white/22 shadow-[0_26px_52px_rgba(0,0,0,0.34)]"
+                              : "border-white/8 shadow-[0_18px_36px_rgba(0,0,0,0.16)]"
+                          }`}
+                        >
+                          <img
+                            src={item.testimonial.image}
+                            alt={item.testimonial.name}
+                            className={`h-full w-full object-cover transition duration-500 ${
+                              state.isActive ? "scale-100 grayscale-0" : "scale-[1.05] grayscale-[20%]"
+                            }`}
+                          />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                          <motion.div
+                            initial={false}
+                            animate={{
+                              opacity: state.isActive ? 1 : 0,
+                              y: state.isActive ? 0 : 10,
+                            }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="absolute inset-x-0 bottom-0 p-3 text-left"
+                          >
+                            <p className="text-xs font-semibold text-white sm:text-sm">{item.testimonial.name}</p>
+                            <p className="mt-1 line-clamp-2 text-[11px] text-white/62 sm:text-xs">
+                              {item.testimonial.designation}
+                            </p>
+                          </motion.div>
+                        </div>
+                      </motion.button>
+                    </div>
                   );
                 })}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
-          {/* Content section */}
           <div>
             <AnimatePresence mode="wait">
               <motion.div

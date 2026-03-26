@@ -242,7 +242,7 @@ export const workExperience: ExperienceItem[] = [
     title: "Frontend Engineer Intern",
     description:
       "Worked as a frontend engineer intern at HNG Tech, developing user-facing features with modern frontend technologies.",
-    className: "md:col-span-2",
+    className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp1.svg",
   },
   {
@@ -250,7 +250,7 @@ export const workExperience: ExperienceItem[] = [
     title: "Software Engineer Intern",
     description:
       "At Web3Bridge, I developed and maintained user-facing features across both frontend and backend experiences.",
-    className: "md:col-span-2",
+    className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp2.svg",
   },
   {
@@ -258,7 +258,7 @@ export const workExperience: ExperienceItem[] = [
     title: "Lead Frontend Developer at ICP Deca-hackathon",
     description:
       "Led frontend development for a mental health platform from concept through deployment.",
-    className: "md:col-span-2",
+    className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp3.svg",
   },
   {
@@ -266,7 +266,7 @@ export const workExperience: ExperienceItem[] = [
     title: "Frontend Development using AI for Designs",
     description:
       "Built a frontend portfolio website during the ALX AiCE program using AI-generated design references.",
-    className: "md:col-span-2",
+    className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp4.svg",
   },
 ];
@@ -344,4 +344,3 @@ export const sectionContent = {
 };
 
 export const serviceAreaRoutes = globeRoutes;
-
