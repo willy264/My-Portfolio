@@ -239,33 +239,33 @@ export const testimonials: TestimonialItem[] = [
 export const workExperience: ExperienceItem[] = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
+    title: "Senior Frontend Developer",
     description:
-      "Worked as a frontend engineer intern at HNG Tech, developing user-facing features with modern frontend technologies.",
+      "Led frontend delivery for the WCHL Global Hackathon with ICP HUBS Network, building decentralized ICP interfaces with React, TypeScript, blockchain authentication, and performance-focused UI decisions.",
     className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Software Engineer Intern",
+    title: "React Developer",
     description:
-      "At Web3Bridge, I developed and maintained user-facing features across both frontend and backend experiences.",
+      "At Web3Bridge, I built scalable Web3 and e-commerce frontends, integrated Stripe payment flows, added Zustand-based state management, and aligned frontend delivery with backend APIs.",
     className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Lead Frontend Developer at ICP Deca-hackathon",
+    title: "AI-Driven Frontend Developer",
     description:
-      "Led frontend development for a mental health platform from concept through deployment.",
+      "During the ALX Africa AiCE program, I developed a frontend portfolio with AI-assisted design workflows, improving visual consistency, speed, and implementation quality across the interface.",
     className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Frontend Development using AI for Designs",
+    title: "Freelance Frontend Developer",
     description:
-      "Built a frontend portfolio website during the ALX AiCE program using AI-generated design references.",
+      "Since 2022, I have delivered responsive React and TypeScript applications with Tailwind CSS, wallet integrations, DeFi dashboards, and client-facing product work with strong delivery and communication.",
     className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp4.svg",
   },
