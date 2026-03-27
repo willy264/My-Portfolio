@@ -1,11 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { sectionContent, workExperience } from "../../data";
 import { cn } from "@/lib/utils";
-import { Boxes } from "@/components/ui/BackgroundBoxes";
-import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
-import { Scales } from "@/components/ui/scales";
-import { Spotlight } from "@/components/ui/Spotlight";
 
 const glowColors = [
   "radial-gradient(circle at top left, rgba(141,92,196,0.16), transparent 55%), radial-gradient(circle at bottom right, rgba(171,73,126,0.1), transparent 52%)",
@@ -124,46 +120,8 @@ const ExperienceCard = ({
       onBlur={() => setHovered(false)}
       tabIndex={0}
     >
-      <AnimatePresence>
-        {hovered ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="pointer-events-none absolute inset-0"
-          >
-            <CanvasRevealEffect
-              animationSpeed={revealThemes[index]?.animationSpeed ?? 4}
-              colors={revealThemes[index]?.colors}
-              dotSize={revealThemes[index]?.dotSize ?? 3}
-              containerClassName="opacity-65"
-            />
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
-
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.08] [mask-image:radial-gradient(circle_at_center,black,transparent_75%)]">
-        <Boxes className={cn(isLarge ? "scale-[0.34]" : "scale-[0.28]", "opacity-90")} />
-      </div>
-
-      <Spotlight className={spotlightClasses[index]} fill={spotlightFills[index]} />
-
-      <div className="pointer-events-none absolute -inset-y-[30%] -left-8 h-[160%] w-6 opacity-60" style={verticalMask}>
-        <Scales size={8} className="rounded-lg" color="rgba(255,255,255,0.16)" />
-      </div>
-      <div className="pointer-events-none absolute -inset-y-[30%] -right-8 h-[160%] w-6 opacity-60" style={verticalMask}>
-        <Scales size={8} className="rounded-lg" color="rgba(255,255,255,0.16)" />
-      </div>
-      <div className="pointer-events-none absolute -inset-x-[30%] -top-8 h-6 w-[160%] opacity-60" style={horizontalMask}>
-        <Scales size={8} className="rounded-lg" color="rgba(255,255,255,0.14)" />
-      </div>
-      <div className="pointer-events-none absolute -inset-x-[30%] -bottom-8 h-6 w-[160%] opacity-60" style={horizontalMask}>
-        <Scales size={8} className="rounded-lg" color="rgba(255,255,255,0.14)" />
-      </div>
 
       <motion.div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
