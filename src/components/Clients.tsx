@@ -170,9 +170,7 @@ const Clients = () => {
           </span>
           <h1 className="mt-5 text-3xl font-bold capitalize text-white sm:text-4xl lg:text-5xl">
             {sectionContent.testimonials.heading}{" "}
-            <span className="bg-gradient-to-r from-white via-[#c4b5fd] to-[#7dd3fc] bg-clip-text text-transparent">
-              {sectionContent.testimonials.accent}
-            </span>
+            <span className="text-purple">{sectionContent.testimonials.accent}</span>
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-white/58 sm:text-base">
             People I have built with, learned with, and shipped alongside. Browse the portrait rail to explore each featured voice.
@@ -236,18 +234,20 @@ const Clients = () => {
                         <div
                           className={`relative h-full w-full overflow-hidden rounded-[1.4rem] border transition duration-500 ${
                             state.isActive
-                              ? "border-white/22 shadow-[0_26px_52px_rgba(0,0,0,0.34)]"
-                              : "border-white/8 shadow-[0_18px_36px_rgba(0,0,0,0.16)]"
+                              ? "border-white/15 bg-[#080314] shadow-[0_8px_16px_rgba(76,29,149,0.12)]"
+                              : "border-purple-950/55 bg-[#080314] shadow-[0_8px_16px_rgba(76,29,149,0.08)]"
                           }`}
                         >
+                          <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
+                          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
                           <img
                             src={item.testimonial.image}
                             alt={item.testimonial.name}
-                            className={`h-full w-full object-cover transition duration-500 ${
+                            className={`relative z-[2] h-full w-full object-cover transition duration-500 ${
                               state.isActive ? "scale-100 grayscale-0" : "scale-[1.05] grayscale-[20%]"
                             }`}
                           />
-                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                          <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-[#0f031d]/90 via-black/10 to-transparent" />
                           <motion.div
                             initial={false}
                             animate={{
@@ -255,7 +255,7 @@ const Clients = () => {
                               y: state.isActive ? 0 : 10,
                             }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="absolute inset-x-0 bottom-0 p-3 text-left"
+                            className="absolute inset-x-0 bottom-0 z-[4] p-3 text-left"
                           >
                             <p className="text-xs font-semibold text-white sm:text-sm">{item.testimonial.name}</p>
                             <p className="mt-1 line-clamp-2 text-[11px] text-white/62 sm:text-xs">
@@ -279,9 +279,11 @@ const Clients = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative mx-auto w-full max-w-[42rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] sm:p-6 lg:p-7"
+                className="relative mx-auto w-full max-w-[42rem] overflow-hidden rounded-[1.75rem] border border-purple-950/55 bg-[#080314] p-5 shadow-[0_8px_16px_rgba(76,29,149,0.12)] sm:p-6 lg:p-7"
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.12),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(196,181,253,0.12),transparent_32%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(141,92,196,0.14),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(171,73,126,0.12),transparent_32%)]" />
                 <div className="relative z-10">
                   <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[0.65rem] uppercase tracking-[0.26em] text-white/42">
                     Featured Voice

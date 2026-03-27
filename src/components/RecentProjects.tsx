@@ -161,9 +161,7 @@ const RecentProjects = () => {
             className="mt-5 text-3xl font-bold capitalize text-white sm:text-4xl lg:text-5xl"
           >
             {projectsSectionContent.heading}{" "}
-            <span className="bg-gradient-to-r from-white via-[#c4b5fd] to-[#7dd3fc] bg-clip-text text-transparent">
-              {projectsSectionContent.accent}
-            </span>
+            <span className="text-purple">{projectsSectionContent.accent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -189,11 +187,13 @@ const RecentProjects = () => {
             >
               <div
                 className={cn(
-                  "group/card relative grid h-full w-full overflow-hidden rounded-[1.9rem] border border-white/12 bg-[linear-gradient(135deg,#090411_0%,#12081d_55%,#05020a_100%)] p-4 text-white shadow-[0_28px_90px_rgba(4,1,12,0.7)] sm:p-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.86fr)] md:gap-4 lg:p-5",
+                  "group/card relative grid h-full w-full overflow-hidden rounded-[1.9rem] border border-purple-950/55 bg-[#080314] p-4 text-white shadow-[0_8px_16px_rgba(76,29,149,0.12)] transition duration-300 hover:border-white/15 sm:p-5 md:grid-cols-[minmax(0,1fr)_minmax(0,0.86fr)] md:gap-4 lg:p-5",
                   className,
                 )}
               >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(125,211,252,0.16),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(196,181,253,0.16),transparent_28%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(141,92,196,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(171,73,126,0.12),transparent_28%)]" />
                 <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:36px_36px]" />
 
                 <motion.div
@@ -201,7 +201,7 @@ const RecentProjects = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={panelViewport}
                   transition={panelTransition}
-                  className="relative z-10 flex h-full min-h-full min-w-0 flex-col rounded-[1.55rem] border border-white/10 bg-black/20 p-5 backdrop-blur-sm sm:p-6 lg:p-5"
+                  className="relative z-10 flex h-full min-h-full min-w-0 flex-col rounded-[1.55rem] border border-white/10 bg-[#0b0515]/75 p-5 backdrop-blur-sm sm:p-6 lg:p-5"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
@@ -263,7 +263,7 @@ const RecentProjects = () => {
                     transition={{ ...panelTransition, delay: 0.24 }}
                     className="mt-auto flex flex-col gap-4 pt-6 sm:flex-col sm:items-top sm:justify-between"
                   >
-                    <div className="space-y-1 hidden sm:block">
+                    <div className="hidden space-y-1 sm:block">
                       <p className="text-[0.68rem] uppercase tracking-[0.28em] text-white/35">Experience</p>
                       <p className="text-sm text-white/70">Live product, source code, and polished interface details.</p>
                     </div>
@@ -273,7 +273,7 @@ const RecentProjects = () => {
                         href={liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/6 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
+                        className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/5 px-4 py-2.5 text-sm font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
                       >
                         {projectsSectionContent.liveLabel}
                       </a>
@@ -282,7 +282,7 @@ const RecentProjects = () => {
                         href={githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-white/90"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/18 hover:bg-white/14"
                       >
                         <span>{projectsSectionContent.githubLabel}</span>
                         <FaChevronDown />
@@ -298,7 +298,7 @@ const RecentProjects = () => {
                   transition={{ duration: 0.68, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                   className="relative z-10 hidden min-h-[16rem] min-w-0 md:block md:h-full md:min-h-0"
                 >
-                  <div className="relative flex h-full w-full overflow-hidden rounded-[1.55rem] border border-white/10 bg-[#05030a] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.4)]">
+                  <div className="relative flex h-full w-full overflow-hidden rounded-[1.55rem] border border-white/10 bg-[#0b0515] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.32)]">
                     <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/10 to-transparent" />
                     <div className="absolute left-4 top-4 flex gap-2">
                       <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
@@ -312,7 +312,7 @@ const RecentProjects = () => {
                       alt={title}
                     />
 
-                    <div className="pointer-events-none absolute inset-0 rounded-[1.55rem] bg-gradient-to-t from-[#05030a]/78 via-transparent to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 rounded-[1.55rem] bg-gradient-to-t from-[#0f031d]/82 via-transparent to-transparent" />
 
                     <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
                       <div>
@@ -333,7 +333,9 @@ const RecentProjects = () => {
             aria-hidden="true"
             className="flex h-[24rem] w-[86vw] max-w-[22rem] items-stretch justify-center shrink-0 sm:h-[25rem] sm:w-[24rem] sm:max-w-[24rem] md:h-[27rem] md:w-[44rem] md:max-w-none lg:h-[30rem] lg:w-[min(90vw,980px)]"
           >
-            <div className="relative h-full w-full overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(135deg,rgba(18,8,29,0.55),rgba(5,2,10,0.9))] shadow-[0_28px_90px_rgba(4,1,12,0.42)]">
+            <div className="relative h-full w-full overflow-hidden rounded-[1.9rem] border border-purple-950/55 bg-[#080314] shadow-[0_8px_16px_rgba(76,29,149,0.12)]">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/4 via-transparent to-[#0f031d]/90" />
               <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:36px_36px]" />
               <div className="pointer-events-none absolute inset-8 rounded-[1.6rem] border border-dashed border-white/10 bg-white/[0.015]" />
             </div>

@@ -88,7 +88,7 @@ const Card = ({
 
   return (
     <div
-      className="group/canvas-card relative mx-auto flex min-h-[22rem] w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-purple-950/55 bg-[#080314] p-6 text-left shadow-[0_30px_80px_rgba(76,29,149,0.18)] transition duration-300 hover:-translate-y-1 hover:border-white/15 focus-within:-translate-y-1 focus-within:border-white/15 md:min-h-[24rem]"
+      className="group/canvas-card relative mx-auto flex min-h-[22rem] w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-purple-950/55 bg-[#080314] p-6 text-left shadow-[0_8px_16px_rgba(76,29,149,0.12)] transition duration-300 hover:-translate-y-1 hover:border-white/15 focus-within:-translate-y-1 focus-within:border-white/15 md:min-h-[24rem]"
       onMouseEnter={activateHover}
       onMouseLeave={deactivateHover}
       onFocus={activateHover}
