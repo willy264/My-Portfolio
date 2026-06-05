@@ -136,7 +136,7 @@ export const aboutGridItems: AboutGridItem[] = [
     title: "Currently building Trueworth, an AI-powered property valuation platform.",
     description: "The inside scoop",
     className: "col-span-1 md:col-span-6 lg:col-span-3 lg:row-span-2",
-    img: "/project-trueworth.png",
+    img: "/Screenshot 2026-06-05 083539.png",
     imgClassName: "absolute inset-0 h-full w-full object-cover object-top opacity-50",
     titleClassName:
       "justify-center md:justify-start md:mt-10 lg:justify-center lg:mt-0",
@@ -172,26 +172,36 @@ export const projectsSectionContent: ProjectSectionContent = {
 export const projects: ProjectItem[] = [
   {
     id: 1,
-    title: "0gRamp",
+    title: "Forge",
     description:
-      "A production-ready Web3 onboarding platform focused on frictionless ramp and wallet interactions.",
-    image: "/project-0gramp.png",
-    liveUrl: "https://0g-ramp.vercel.app/",
-    githubUrl: "https://github.com/willy264/0gRamp",
-    toolKeys: ["react", "vite", "tailwind", "typescript", "framer-motion"],
+      "The main landing page for Forge, a modern decentralized web platform built to empower developers with seamless integration.",
+    image: "/project-forge.png",
+    liveUrl: "https://forge-fe-landing.vercel.app/",
+    githubUrl: "https://github.com/hackathon-by-hgs/forge_fe/tree/master/apps/landing",
+    toolKeys: ["react", "nextjs", "tailwind", "typescript", "framer-motion"],
   },
   {
     id: 2,
-    title: "MentalVerse",
+    title: "Market Narrative",
     description:
-      "A mental wellness product experience built for the ICP ecosystem with interactive flows and clean UX.",
-    image: "/project-mentalverse.png",
-    liveUrl: "https://mentalverse.vercel.app/",
-    githubUrl: "https://github.com/MentalverseICP/MentalVerse",
-    toolKeys: ["react", "typescript", "javascript", "nodejs", "css"],
+      "A live market data and analytics platform delivering narrative-driven insights with real-time tracking.",
+    image: "/project-narrative.png",
+    liveUrl: "https://marketnarrativelive.vercel.app/",
+    githubUrl: "https://github.com/willy264/narrative_frontend/tree/main/frontend_app",
+    toolKeys: ["nextjs", "react", "tailwind", "typescript"],
   },
   {
     id: 3,
+    title: "Ontiver",
+    description:
+      "Verify Once, Reuse Everywhere. A seamless identity and verification platform for the modern web.",
+    image: "/project-ontiver.png",
+    liveUrl: "https://ontiver.com/",
+    githubUrl: "https://github.com/joinverza/Ontiver",
+    toolKeys: ["nextjs", "react", "tailwind", "typescript"],
+  },
+  {
+    id: 4,
     title: "Riverr Finance",
     description:
       "A modern finance dashboard experience with token-focused workflows and responsive data-driven UI.",
@@ -201,7 +211,7 @@ export const projects: ProjectItem[] = [
     toolKeys: ["react", "vite", "tailwind", "typescript"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Flux",
     description:
       "A polished frontend system with reusable components, smooth interactions, and a scalable Next.js setup.",
