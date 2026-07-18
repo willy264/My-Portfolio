@@ -21,7 +21,12 @@ export type SkillKey =
   | "youtube-api"
   | "google-api"
   | "react-native"
-  | "nextjs";
+  | "nextjs"
+  | "nestjs"
+  | "prisma"
+  | "postgresql"
+  | "redis"
+  | "docker";
 
 export type AboutGridVariant =
   | "image"

@@ -37,6 +37,11 @@ export const skillLabels: Record<SkillKey, string> = {
   "google-api": "Google API",
   "react-native": "React Native",
   nextjs: "Next.js",
+  nestjs: "NestJS",
+  prisma: "Prisma",
+  postgresql: "PostgreSQL",
+  redis: "Redis",
+  docker: "Docker",
 };
 
 export const navigation: NavigationItem[] = [
@@ -172,6 +177,26 @@ export const projectsSectionContent: ProjectSectionContent = {
 export const projects: ProjectItem[] = [
   {
     id: 1,
+    title: "Sluice",
+    description:
+      "A live operations layer for CKB Fiber Network nodes that visualizes channel liquidity, preflights payments with dry-run route probes, and automates circular rebalancing.",
+    image: "/project-sluice.png",
+    liveUrl: "https://sluice.drreamer.digital/",
+    githubUrl: "https://github.com/Maxima24/sluice",
+    toolKeys: [
+      "nextjs",
+      "react",
+      "tailwind",
+      "typescript",
+      "nestjs",
+      "prisma",
+      "postgresql",
+      "redis",
+      "docker",
+    ],
+  },
+  {
+    id: 2,
     title: "Forge",
     description:
       "The main landing page for Forge, a modern decentralized web platform built to empower developers with seamless integration.",
@@ -181,7 +206,7 @@ export const projects: ProjectItem[] = [
     toolKeys: ["react", "nextjs", "tailwind", "typescript", "framer-motion"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Market Narrative",
     description:
       "A live market data and analytics platform delivering narrative-driven insights with real-time tracking.",
@@ -191,7 +216,7 @@ export const projects: ProjectItem[] = [
     toolKeys: ["nextjs", "react", "tailwind", "typescript"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Ontiver",
     description:
       "Verify Once, Reuse Everywhere. A seamless identity and verification platform for the modern web.",
@@ -201,24 +226,14 @@ export const projects: ProjectItem[] = [
     toolKeys: ["nextjs", "react", "tailwind", "typescript"],
   },
   {
-    id: 4,
-    title: "Riverr Finance",
-    description:
-      "A modern finance dashboard experience with token-focused workflows and responsive data-driven UI.",
-    image: "/project-riverr.png",
-    liveUrl: "https://joljv-6aaaa-aaaah-qqbmq-cai.icp0.io/dashboard",
-    githubUrl: "https://github.com/RiverrFinance/Riverr-frontend",
-    toolKeys: ["react", "vite", "tailwind", "typescript"],
-  },
-  {
     id: 5,
-    title: "Flux",
+    title: "SwiftyDrop Guard",
     description:
-      "A polished frontend system with reusable components, smooth interactions, and a scalable Next.js setup.",
-    image: "/project-flux.png",
-    liveUrl: "https://flux-ashy-nine.vercel.app/",
-    githubUrl: "https://github.com/Maxima24/flux-frontend",
-    toolKeys: ["nextjs", "react", "tailwind", "typescript", "framer-motion", "threejs"],
+      "A Telegram-first crypto safety dashboard combining verified airdrop discovery, Gemini-powered scam intelligence, wallet risk analysis, task tracking, and gamified community rankings.",
+    image: "/project-swiftydrop-guard.png",
+    liveUrl: "https://swifty-swart.vercel.app/",
+    githubUrl: "https://github.com/willy264/swifty",
+    toolKeys: ["nextjs", "react", "tailwind", "typescript", "framer-motion", "gsap"],
   },
 ];
 
