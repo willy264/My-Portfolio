@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { FaCss3Alt, FaGitAlt, FaHtml5, FaJsSquare, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaCss3Alt, FaHtml5, FaJsSquare, FaNodeJs, FaReact } from "react-icons/fa";
 import {
   FaEnvelopesBulk,
   FaPhoneVolume,
@@ -7,8 +7,6 @@ import {
   FaUserAstronaut,
 } from "react-icons/fa6";
 import {
-  SiFirebase,
-  SiFramer,
   SiGoogle,
   SiGreensock,
   SiDocker,
@@ -22,7 +20,6 @@ import {
   SiStripe,
   SiStyledcomponents,
   SiTailwindcss,
-  SiThreedotjs,
   SiTypescript,
   SiVite,
   SiYoutube,
@@ -40,8 +37,6 @@ export const navigationIconMap: Record<NavigationIconKey, ReactNode> = {
 
 export const skillIconMap: Record<SkillKey, ReactNode> = {
   react: <FaReact className="text-2xl text-blue-500" />,
-  threejs: <SiThreedotjs className="text-2xl text-cyan-300" />,
-  "framer-motion": <SiFramer className="text-2xl text-purple-500" />,
   tailwind: <SiTailwindcss className="text-2xl text-blue-400" />,
   sass: <SiSass className="text-2xl text-pink-500" />,
   typescript: <SiTypescript className="text-2xl text-blue-600" />,
@@ -52,8 +47,6 @@ export const skillIconMap: Record<SkillKey, ReactNode> = {
   css: <FaCss3Alt className="text-2xl text-blue-600" />,
   javascript: <FaJsSquare className="text-2xl text-yellow-500" />,
   nodejs: <FaNodeJs className="text-2xl text-green-600" />,
-  git: <FaGitAlt className="text-2xl text-red-500" />,
-  firebase: <SiFirebase className="text-2xl text-orange-500" />,
   stripe: <SiStripe className="text-2xl text-indigo-500" />,
   "styled-components": <SiStyledcomponents className="text-2xl text-pink-500" />,
   "youtube-api": <SiYoutube className="text-2xl text-red-500" />,

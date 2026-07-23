@@ -17,8 +17,6 @@ const contactEmail = "daviswill264@gmail.com";
 
 export const skillLabels: Record<SkillKey, string> = {
   react: "React",
-  threejs: "Three.js",
-  "framer-motion": "Framer Motion",
   tailwind: "Tailwind CSS",
   sass: "Sass",
   typescript: "TypeScript",
@@ -29,8 +27,6 @@ export const skillLabels: Record<SkillKey, string> = {
   css: "CSS",
   javascript: "JavaScript",
   nodejs: "Node.js",
-  git: "Git",
-  firebase: "Firebase",
   stripe: "Stripe",
   "styled-components": "Styled Components",
   "youtube-api": "YouTube API",
@@ -68,19 +64,19 @@ export const navigation: NavigationItem[] = [
 ];
 
 export const heroContent: HeroContent = {
-  eyebrow: "Dynamic web magic with React.js",
-  headline: "Designing the future, one pixel at a time.",
-  intro: "Hi! I'm Williams Akinwamide, a React.js developer based in Nigeria.",
+  eyebrow: "Full-stack product engineering",
+  headline: "Building complete products, from interface to infrastructure.",
+  intro: "Hi! I'm Williams Akinwamide, a full-stack developer based in Nigeria.",
   ctaLabel: "Show my work",
   featuredSkillKeys: [
+    "typescript",
     "react",
-    "threejs",
-    "framer-motion",
+    "nextjs",
     "tailwind",
-    "sass",
-    "gsap",
-    "sentry",
-    "vite",
+    "nodejs",
+    "nestjs",
+    "prisma",
+    "postgresql",
   ],
 };
 
@@ -111,22 +107,22 @@ export const aboutGridItems: AboutGridItem[] = [
     id: 3,
     variant: "tech-stack",
     title: "My tech stack",
-    description: "I constantly try to improve.",
+    description: "Frontend, Backend, Mobile Apps, data, and infrastructure.",
     className: "col-span-1 md:col-span-3",
     img: "",
     imgClassName: "",
     titleClassName: "justify-center",
     spareImg: "",
     skillColumns: [
-      ["javascript", "typescript", "nextjs", "react"],
-      ["react-native", "threejs", "firebase", "git"],
-      ["tailwind", "framer-motion", "gsap"],
+      ["typescript", "react", "nextjs", "tailwind"],
+      ["nodejs", "nestjs", "prisma", "react-native"],
+      ["postgresql", "redis", "docker"],
     ],
   },
   {
     id: 4,
     variant: "image",
-    title: "Tech enthusiast with a passion for development.",
+    title: "Full-stack engineer focused on reliable, production-ready systems.",
     description: "",
     className: "col-span-1 md:col-span-3 lg:col-span-3",
     img: "/grid.svg",
@@ -138,7 +134,7 @@ export const aboutGridItems: AboutGridItem[] = [
   {
     id: 5,
     variant: "feature-link",
-    title: "Currently building Trueworth, an AI-powered property valuation platform.",
+    title: "Currently building Trueworth, an AI-powered full-stack property valuation platform.",
     description: "The inside scoop",
     className: "col-span-1 md:col-span-6 lg:col-span-3 lg:row-span-2",
     img: "/Screenshot 2026-06-05 083539.png",
@@ -197,16 +193,36 @@ export const projects: ProjectItem[] = [
   },
   {
     id: 2,
+    title: "Conduit",
+    description:
+      "A full-stack reliability layer for Monnify and other webhooks, with exactly-once ingestion, queued notification retries, dead-letter replay, and end-to-end reconciliation.",
+    image: "/project-conduit.png",
+    liveUrl: "https://conduit-sage.vercel.app/",
+    githubUrl: "https://github.com/hackathon-by-hgs/Conduit/",
+    toolKeys: [
+      "nextjs",
+      "react",
+      "tailwind",
+      "typescript",
+      "nestjs",
+      "prisma",
+      "postgresql",
+      "redis",
+      "docker",
+    ],
+  },
+  {
+    id: 3,
     title: "Forge",
     description:
       "The main landing page for Forge, a modern decentralized web platform built to empower developers with seamless integration.",
     image: "/project-forge.png",
     liveUrl: "https://forge-fe-landing.vercel.app/",
     githubUrl: "https://github.com/hackathon-by-hgs/forge_fe/tree/master/apps/landing",
-    toolKeys: ["react", "nextjs", "tailwind", "typescript", "framer-motion"],
+    toolKeys: ["react", "nextjs", "tailwind", "typescript"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Market Narrative",
     description:
       "A live market data and analytics platform delivering narrative-driven insights with real-time tracking.",
@@ -216,7 +232,7 @@ export const projects: ProjectItem[] = [
     toolKeys: ["nextjs", "react", "tailwind", "typescript"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Ontiver",
     description:
       "Verify Once, Reuse Everywhere. A seamless identity and verification platform for the modern web.",
@@ -226,21 +242,21 @@ export const projects: ProjectItem[] = [
     toolKeys: ["nextjs", "react", "tailwind", "typescript"],
   },
   {
-    id: 5,
+    id: 6,
     title: "SwiftyDrop Guard",
     description:
       "A Telegram-first crypto safety dashboard combining verified airdrop discovery, Gemini-powered scam intelligence, wallet risk analysis, task tracking, and gamified community rankings.",
     image: "/project-swiftydrop-guard.png",
     liveUrl: "https://swifty-swart.vercel.app/",
     githubUrl: "https://github.com/willy264/swifty",
-    toolKeys: ["nextjs", "react", "tailwind", "typescript", "framer-motion", "gsap"],
+    toolKeys: ["nextjs", "react", "tailwind", "typescript", "gsap"],
   },
 ];
 
 export const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Williams is a talented and dedicated frontend developer. His ability to quickly learn and adapt to new technologies is impressive, and working with him was a pleasure.",
+      "Williams is a talented and dedicated developer. His ability to quickly learn and adapt to new technologies is impressive, and working with him was a pleasure.",
     name: "Faraq Salami",
     designation: "Studied with him at Dataskills Computer School",
     image: "/OIP (17).jpeg",
@@ -264,33 +280,33 @@ export const testimonials: TestimonialItem[] = [
 export const workExperience: ExperienceItem[] = [
   {
     id: 1,
-    title: "Senior Frontend Developer",
+    title: "Full-Stack Web3 Developer",
     description:
-      "Led frontend delivery for the WCHL Global Hackathon with ICP HUBS Network, building decentralized ICP interfaces with React, TypeScript, blockchain authentication, and performance-focused UI decisions.",
+      "Built end-to-end Web3 products for the WCHL Global Hackathon with ICP HUBS Network, connecting React and TypeScript interfaces to blockchain authentication, backend services, and deployment-ready workflows.",
     className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "React Developer",
+    title: "Full-Stack Developer",
     description:
-      "At Web3Bridge, I built scalable Web3 and e-commerce frontends, integrated Stripe payment flows, added Zustand-based state management, and aligned frontend delivery with backend APIs.",
+      "At Web3Bridge, I built Web3 and e-commerce products across responsive interfaces, API-backed workflows, state management, and Stripe payment integrations.",
     className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "AI-Driven Frontend Developer",
+    title: "AI-Assisted Full-Stack Developer",
     description:
-      "During the ALX Africa AiCE program, I developed a frontend portfolio with AI-assisted design workflows, improving visual consistency, speed, and implementation quality across the interface.",
+      "During the ALX Africa AiCE program, I used AI-assisted engineering workflows to design and build product interfaces, API integrations, and maintainable application architecture.",
     className: "md:col-span-2 lg:col-span-4",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Freelance Frontend Developer",
+    title: "Freelance Full-Stack Developer",
     description:
-      "Since 2022, I have delivered responsive React and TypeScript applications with Tailwind CSS, wallet integrations, DeFi dashboards, and client-facing product work with strong delivery and communication.",
+      "Since 2022, I have delivered TypeScript applications spanning responsive frontends, Node.js APIs, PostgreSQL-backed data, wallet integrations, dashboards, and production deployment.",
     className: "md:col-span-4 lg:col-span-8",
     thumbnail: "/exp4.svg",
   },
@@ -321,9 +337,9 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const footerContent: FooterContent = {
-  heading: "Ready to take your digital presence to the next level?",
+  heading: "Ready to take your product from idea to production?",
   subheading:
-    "Reach out today and let's discuss how I can help you achieve your goals.",
+    "Let's discuss the interface, APIs, data, and infrastructure needed to ship it well.",
   ownerName: "Williams Akinwamide",
   contactEmail,
   contactCtaLabel: "Send an email",
@@ -332,23 +348,23 @@ export const footerContent: FooterContent = {
 export const approachSteps: ApproachStep[] = [
   {
     phase: "Phase 1",
-    title: "Planning & Strategy",
+    title: "Discovery & Architecture",
     description:
-      "We'll collaborate to map out your website's goals, target audience, structure, and key functionality.",
+      "We'll define the product goals, user flows, data model, system boundaries, integrations, and delivery plan.",
     theme: "emerald",
   },
   {
     phase: "Phase 2",
-    title: "Development & Progress Update",
+    title: "Build & Integration",
     description:
-      "Once the plan is approved, I move into implementation and keep you updated from initial sketches to polished code.",
+      "I build the interface, APIs, database workflows, and third-party integrations while sharing clear progress updates.",
     theme: "midnight",
   },
   {
     phase: "Phase 3",
-    title: "Development & Launch",
+    title: "Validation & Launch",
     description:
-      "This is where the approved design becomes a working product, ready to be tested, refined, and launched.",
+      "The complete system is tested across frontend and backend, refined, monitored, and deployed for production use.",
     theme: "sky",
   },
 ];

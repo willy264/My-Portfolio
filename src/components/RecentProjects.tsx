@@ -170,7 +170,7 @@ const RecentProjects = () => {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.14 }}
             className="mt-4 text-sm leading-relaxed text-white/55 sm:text-base"
           >
-            A tighter look at products built for real users, with motion, polish, and production-ready interfaces.
+            Production systems spanning polished interfaces, APIs, data, and dependable infrastructure.
           </motion.p>
         </motion.div>
       </div>

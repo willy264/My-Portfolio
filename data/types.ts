@@ -2,8 +2,6 @@
 
 export type SkillKey =
   | "react"
-  | "threejs"
-  | "framer-motion"
   | "tailwind"
   | "sass"
   | "typescript"
@@ -14,8 +12,6 @@ export type SkillKey =
   | "css"
   | "javascript"
   | "nodejs"
-  | "git"
-  | "firebase"
   | "stripe"
   | "styled-components"
   | "youtube-api"
